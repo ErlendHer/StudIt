@@ -27,7 +27,6 @@ public class AppController {
     public void initialize() {
         loadData();
         coursesList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        System.out.println("Init");
 
         //Actions on clicked list item
         mouseClicked();
@@ -92,6 +91,7 @@ public class AppController {
     
     //Denne funksjonen burde egentlig være en som henter noe fra en database der data om hvert fag blir lagret.
     private void loadData() {
+
     String a = "TDT4109";
     String b =  "TMA4145";
     String c = "TTM4175";

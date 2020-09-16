@@ -20,7 +20,7 @@ public class App extends Application {
         scene.getStylesheets().add(getClass().getResource("listStyles.css").toExternalForm());
 		
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Hello World");
+		primaryStage.setTitle("StudIt");
 		primaryStage.show();
 	}
 	
