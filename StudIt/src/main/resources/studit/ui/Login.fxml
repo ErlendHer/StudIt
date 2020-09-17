@@ -65,7 +65,7 @@
                         <Font name="AdobeDevanagari-Regular" size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="142.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brukernavn" />
+                  <Text layoutX="132.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brukernavn" />
                   <Text layoutX="151.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passord" />
                   <TextField fx:id="usernameField" layoutX="211.0" layoutY="91.0" prefHeight="25.0" prefWidth="186.0" />
                   <Button fx:id="loginButton" layoutX="279.0" layoutY="178.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Log in" />
