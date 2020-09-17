@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="core.LoginManagerTest" time="0.005" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="14"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="jdk.extensions.version" value="14.0.2.0"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/workspace/gr2060/StudIt/target/test-classes:/workspace/m2-repository/org/openjfx/javafx-fxml/14.0.1/javafx-fxml-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-controls/14.0.1/javafx-controls-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-graphics/14.0.1/javafx-graphics-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-base/14.0.1/javafx-base-14.0.1.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar:/workspace/m2-repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/workspace/m2-repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/workspace/m2-repository/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar:/workspace/m2-repository/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar:/workspace/m2-repository/org/mockito/mockito-core/2.28.2/mockito-core-2.28.2.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar:/workspace/m2-repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/workspace/m2-repository/org/testfx/testfx-core/4.0.16-alpha/testfx-core-4.0.16-alpha.jar:/workspace/m2-repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/workspace/m2-repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/workspace/m2-repository/org/testfx/testfx-junit5/4.0.16-alpha/testfx-junit5-4.0.16-alpha.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse OpenJ9"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="com.ibm.oti.vm.library.version" value="29"/>
+    <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib/compressedrefs:/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /workspace/gr2060/StudIt/target/surefire 2020-09-16T22-26-55_037-jvmRun1 surefire4863452358189691406tmp surefire_09528729007626174438tmp"/>
+    <property name="surefire.test.class.path" value="/workspace/gr2060/StudIt/target/test-classes:/workspace/m2-repository/org/openjfx/javafx-fxml/14.0.1/javafx-fxml-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-controls/14.0.1/javafx-controls-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-graphics/14.0.1/javafx-graphics-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-base/14.0.1/javafx-base-14.0.1.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar:/workspace/m2-repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/workspace/m2-repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/workspace/m2-repository/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar:/workspace/m2-repository/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar:/workspace/m2-repository/org/mockito/mockito-core/2.28.2/mockito-core-2.28.2.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar:/workspace/m2-repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/workspace/m2-repository/org/testfx/testfx-core/4.0.16-alpha/testfx-core-4.0.16-alpha.jar:/workspace/m2-repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/workspace/m2-repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/workspace/m2-repository/org/testfx/testfx-junit5/4.0.16-alpha/testfx-junit5-4.0.16-alpha.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/gitpod"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="jdk.module.path" value="/workspace/gr2060/StudIt/target/classes:/workspace/m2-repository/com/fasterxml/jackson/core/jackson-core/2.11.2/jackson-core-2.11.2.jar:/workspace/m2-repository/com/fasterxml/jackson/core/jackson-databind/2.11.2/jackson-databind-2.11.2.jar:/workspace/m2-repository/com/fasterxml/jackson/core/jackson-annotations/2.11.2/jackson-annotations-2.11.2.jar:/workspace/m2-repository/org/openjfx/javafx-fxml/14.0.1/javafx-fxml-14.0.1-linux.jar:/workspace/m2-repository/org/openjfx/javafx-controls/14.0.1/javafx-controls-14.0.1-linux.jar:/workspace/m2-repository/org/openjfx/javafx-graphics/14.0.1/javafx-graphics-14.0.1-linux.jar:/workspace/m2-repository/org/openjfx/javafx-base/14.0.1/javafx-base-14.0.1-linux.jar"/>
+    <property name="java.version.date" value="2020-07-14"/>
+    <property name="java.home" value="/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="file.separator" value="/"/>
+    <property name="jdk.extensions.name" value="Extensions for OpenJDK for Eclipse OpenJ9"/>
+    <property name="basedir" value="/workspace/gr2060/StudIt"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.compiler" value="j9jit29"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="java.awt.fonts" value=""/>
+    <property name="surefire.real.class.path" value="/workspace/m2-repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar:/workspace/m2-repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar:/workspace/m2-repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar:/workspace/m2-repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar:/workspace/m2-repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar:/workspace/gr2060/StudIt/target/test-classes:/workspace/m2-repository/org/openjfx/javafx-fxml/14.0.1/javafx-fxml-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-controls/14.0.1/javafx-controls-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-graphics/14.0.1/javafx-graphics-14.0.1.jar:/workspace/m2-repository/org/openjfx/javafx-base/14.0.1/javafx-base-14.0.1.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar:/workspace/m2-repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/workspace/m2-repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/workspace/m2-repository/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar:/workspace/m2-repository/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar:/workspace/m2-repository/org/mockito/mockito-core/2.28.2/mockito-core-2.28.2.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy/1.9.10/byte-buddy-1.9.10.jar:/workspace/m2-repository/net/bytebuddy/byte-buddy-agent/1.9.10/byte-buddy-agent-1.9.10.jar:/workspace/m2-repository/org/objenesis/objenesis/2.6/objenesis-2.6.jar:/workspace/m2-repository/org/testfx/testfx-core/4.0.16-alpha/testfx-core-4.0.16-alpha.jar:/workspace/m2-repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/workspace/m2-repository/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar:/workspace/m2-repository/org/testfx/testfx-junit5/4.0.16-alpha/testfx-junit5-4.0.16-alpha.jar:/workspace/m2-repository/org/apache/maven/surefire/surefire-junit-platform/3.0.0-M5/surefire-junit-platform-3.0.0-M5.jar:/workspace/m2-repository/org/apache/maven/surefire/common-java5/3.0.0-M5/common-java5-3.0.0-M5.jar:/workspace/m2-repository/org/junit/platform/junit-platform-launcher/1.4.2/junit-platform-launcher-1.4.2.jar:/workspace/m2-repository/org/jacoco/org.jacoco.agent/0.8.5/org.jacoco.agent-0.8.5-runtime.jar"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="jdk.boot.class.path.append" value=""/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib/compressedrefs:/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.fullversion" value="14.0.2+12&#10;JRE 14 Linux amd64-64-Bit Compressed References 20200715_149 (JIT enabled, AOT enabled)&#10;OpenJ9   - 34cf4c075&#10;OMR      - 113e54219&#10;JCL      - 1d231bd6a2 based on jdk-14.0.2+12"/>
+    <property name="java.runtime.version" value="14.0.2+12"/>
+    <property name="user.name" value="gitpod"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="4.19.112+"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Eclipse OpenJ9 VM"/>
+    <property name="java.vendor.version" value="AdoptOpenJDK"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="localRepository" value="/workspace/m2-repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="14.0.2"/>
+    <property name="com.ibm.system.agent.path" value="/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib"/>
+    <property name="user.dir" value="/workspace/gr2060/StudIt"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.nio.PageAlignDirectMemory" value="false"/>
+    <property name="os.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib/compressedrefs:/home/gitpod/.sdkman/candidates/java/14.0.2.j9-adpt/lib:/usr/lib64:/usr/lib"/>
+    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.vm.info" value="JRE 14 Linux amd64-64-Bit Compressed References 20200715_149 (JIT enabled, AOT enabled)&#10;OpenJ9   - 34cf4c075&#10;OMR      - 113e54219&#10;JCL      - 1d231bd6a2 based on jdk-14.0.2+12"/>
+    <property name="sun.nio.MaxDirectMemorySize" value="2068054016"/>
+    <property name="java.vm.version" value="openj9-0.21.0"/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="ibm.system.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="58.0"/>
+  </properties>
+  <testcase name="testMatch" classname="core.LoginManagerTest" time="0.004"/>
+</testsuite>

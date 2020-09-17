@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<VBox fx:id = "vBox" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller = "studit.ui.LoginController">
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller = "studit.ui.AppController">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
+    <!-- <MenuBar prefHeight="26.0" prefWidth="721.0" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
@@ -52,19 +55,35 @@
           </items>
         </Menu>
       </menus>
-    </MenuBar>
+    </MenuBar> -->
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <PasswordField fx:id="passwordField" layoutX="211.0" layoutY="178.0" prefHeight="25.0" prefWidth="186.0" />
-            <Text layoutX="263.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="StudIt">
+            <TextField fx:id="search_field" layoutX="102.0" layoutY="54.0" onAction="#searchView" prefHeight="39.0" prefWidth="823.0" promptText="Søk på fag">
                <font>
-                  <Font name="AdobeDevanagari-Regular" size="36.0" />
+                  <Font name="Avenir Next Bold" size="18.0" />
                </font>
-            </Text>
-            <Text layoutX="142.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brukernavn" />
-            <Text layoutX="151.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passord" />
-            <TextField fx:id="usernameField" layoutX="211.0" layoutY="121.0" prefHeight="25.0" prefWidth="186.0" />
-            <Button fx:id="loginButton" layoutX="279.0" layoutY="223.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Log in" />
+            </TextField>
+            <Label layoutX="102.0" layoutY="153.0" text="Fagkode">
+               <font>
+                  <Font name="Avenir Next Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="289.0" layoutY="153.0" text="Fag">
+               <font>
+                  <Font name="Avenir Next Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="chatbot_btn" layoutX="1002.0" layoutY="55.0" mnemonicParsing="false" onAction="#openChatBot" prefHeight="51.0" prefWidth="280.0" text="Åpne chatbot">
+               <font>
+                  <Font name="Avenir Next Bold" size="24.0" />
+               </font>
+            </Button>
+            <TextArea layoutX="1002.0" layoutY="129.0" prefHeight="208.0" prefWidth="280.0" text="I chatboten kan du spørre&#10;spørsmål om det du måtte&#10;lure på, så svarer den så &#10;godt den kan">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+            <ListView fx:id="coursesList" layoutX="102.0" layoutY="201.0" prefHeight="634.0" prefWidth="823.0" />
       </children>
     </AnchorPane>
   </children>
