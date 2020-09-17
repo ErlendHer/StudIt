@@ -54,14 +54,15 @@ public class AppController {
         chatbot = null;
     }
 
-    //Ved å skrive inn noe i søkefeltet skal du få opp en listview
     @FXML
     void searchView(ActionEvent event) {
 
     }
 
     
-    //Må lage en funksjon som observerer at elementer blir dobbeltrykket i listview slik at => noe skjer.
+    /** A function that does something when a element in the listview is clicked on.
+    * @return None
+    */
     public void mouseClicked(){
 		//Detecting mouse clicked
 		coursesList.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -83,15 +84,16 @@ public class AppController {
                         stage.show();
    
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            System.out.println(e);
                         }
 			}
 		});
 	}
     
-    //Denne funksjonen burde egentlig være en som henter noe fra en database der data om hvert fag blir lagret.
+    /** This function should actually fetch data from a database. This will be implemented later.
+    * @return None
+    */
     private void loadData() {
-
     String a = "TDT4109";
     String b =  "TMA4145";
     String c = "TTM4175";
