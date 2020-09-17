@@ -7,12 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import studit.core.Chatbot;
 import javafx.scene.control.Button;
 
 public class AppTest extends ApplicationTest {
 
     private Parent parent;
     private AppController controller;
+    private Chatbot chatbot;
 
     @Override
     public void start(final Stage stage) throws Exception {
@@ -21,6 +23,8 @@ public class AppTest extends ApplicationTest {
         controller = fxmlLoader.getController();
         stage.setScene(new Scene(parent));
         stage.show();
+        
+        chatbot = new Chatbot();
     }
 
 }

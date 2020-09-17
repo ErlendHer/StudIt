@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane_chatbot" minHeight="200.0" minWidth="150.0" prefHeight="420.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studit.ui.ChatbotController">
+   <top>
+      <ToolBar fx:id="toolbar_main" onMouseDragged="#moveWindow" onMousePressed="#setOffset" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="280.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btn_minimize" mnemonicParsing="false" onAction="#minimizeChatbot" prefHeight="32.0" prefWidth="32.0" text="-" />
+                <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#exitChatbot" prefHeight="32.0" prefWidth="32.0" text="X" textAlignment="CENTER" />
+               </children>
+            </HBox>
+        </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <TextArea fx:id="txt_user_entry" onKeyPressed="#userEntry" prefHeight="50.0" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Consolas" size="14.0" />
+         </font></TextArea>
+   </bottom>
+   <center>
+      <ListView fx:id="list_chat" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="5.0" />
+         </padding></ListView>
+   </center>
+</BorderPane>
