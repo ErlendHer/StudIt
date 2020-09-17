@@ -1,0 +1,82 @@
+* {
+	-fx-color-primary: #1f2226;
+	-fx-color-toolbar: #314259;
+	-fx-color-primary-dark: #0052ad;
+	-fx-color-primary-text: #ffffff;
+	
+	-fx-color-secondary: #f0f0f0;
+	-fx-color-secondary-light: #ffffff;
+	-fx-color-secondary-dark: #bebebe;
+	-fx-color-secondary-text: #212121;
+}
+
+
+#pane_chatbot {
+	-fx-background-radius: 12 12 12 12;
+	-fx-border-radius: 12 12 12 12;
+	-fx-background-color: -fx-color-toolbar;
+}
+
+#toolbar_main {
+	-fx-background-radius: 12 12 0 0;
+	-fx-border-radius: 12 12 0 0;
+	-fx-background-color: -fx-color-toolbar;
+}
+
+#btn_exit {
+	-fx-background-color: transparent;
+	-fx-text-fill: transparent;
+	-fx-background-image: url('/studit/icons/close.png');
+    -fx-background-size: 32px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btn_minimize {
+	-fx-background-color: transparent;
+	-fx-text-fill: transparent;
+	-fx-background-image: url('/studit/icons/minimize.png');
+    -fx-background-size: 32px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+#btn_minimize:hover {
+	-fx-background-image:  url('/studit/icons/minimize_hover.png');
+}
+
+#btn_exit:hover {
+	-fx-background-image:  url('/studit/icons/close_hover.png');
+}
+
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-view {
+	-fx-control-inner-background: -fx-color-primary;
+	-fx-font-family: Consolas;
+    -fx-font-size: 14;
+}
+
+.list-cell { /* <=== changed to even */
+    -fx-background-color: -fx-color-primary; 
+    -fx-control-inner-background: -fx-color-primary;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+	-fx-background-color: -fx-color-primary
+}
+
+.text-area {
+	-fx-font-family: Consolas;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+    -fx-display-caret:true;
+}

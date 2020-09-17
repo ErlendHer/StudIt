@@ -16,11 +16,11 @@ import javafx.scene.control.TextField;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import studit.core.Chatbot;
 
-
-
-public class AppController{ 
+public class AppController { 
     
+    public static Chatbot chatbot = null;
     ObservableList<String> list = FXCollections.observableArrayList();
 
     @FXML
@@ -43,7 +43,15 @@ public class AppController{
 
     @FXML
     void openChatBot(ActionEvent event) {
+        if (chatbot == null) {
+    		chatbot = new Chatbot();
+    	} else {
+    		chatbot.show();
+    	}
+    }
 
+    public static void closeChatbot() {
+        chatbot = null;
     }
 
     //Ved å skrive inn noe i søkefeltet skal du få opp en listview
