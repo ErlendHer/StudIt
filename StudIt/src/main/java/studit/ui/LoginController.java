@@ -54,4 +54,16 @@ public class LoginController {
         }
     }
 
+    public void newUserButtonAction() {
+        try {
+            BorderPane pane = FXMLLoader.load(getClass().getResource("newUser.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(pane);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            System.out.println("Coud not open newUser.fxml");
+        }
+    }
 }
