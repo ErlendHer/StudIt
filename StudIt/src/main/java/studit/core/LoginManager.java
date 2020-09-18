@@ -11,15 +11,6 @@ public class LoginManager{
     private  static HashMap<String, String>  DB = new HashMap<String, String>();
 
     public LoginManager(){
-        initialize();
-    }
-
-    /*
-    * Sets a database with username and passwords
-    */
-    public static void initialize(){
-        DB.put("user", "password");
-        DB.put("admin", "password1");
     }
 
     /*
@@ -29,10 +20,7 @@ public class LoginManager{
      * @return true if the username matches the password in the database, else false
      */
     public static boolean match(String username, String password){
-        if (DB.containsKey(username)){
-            return DB.get(username).equals(password);
-        }
-        return false;
+        return UserManager.containsUser(username, password);
     }
 
     /*

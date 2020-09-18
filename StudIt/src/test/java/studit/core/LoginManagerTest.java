@@ -12,7 +12,7 @@ public class LoginManagerTest{
 
     @BeforeEach
     public void init() {
-        LoginManager.initialize();
+        UserManager.initialize();
     }
 
     @Test

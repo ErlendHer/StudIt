@@ -3,6 +3,7 @@ package studit.ui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import studit.core.User;
 import studit.core.UserManager;
@@ -14,6 +15,7 @@ public class newUserController {
     @FXML TextField mailField;
     @FXML TextField userPasswordField;
     @FXML Button saveNewUserButton;
+    @FXML Text infoTextField;
 
     @FXML public void saveNewUserAction() {
         User user = new User();
@@ -21,8 +23,12 @@ public class newUserController {
         user.setUsername(usernameField.getText());
         user.setMail(mailField.getText());
         user.setPassword(userPasswordField.getText());
-        UserManager.addUser(user);
+        boolean successfullyAdded = UserManager.addUser(user);
         Stage stage = (Stage) saveNewUserButton.getScene().getWindow();
-        stage.close();
+        if (successfullyAdded) {
+            stage.close();
+            return;
+        }
+        infoTextField.setText("Error: This username is already taken");
     }
 }

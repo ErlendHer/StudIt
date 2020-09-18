@@ -61,6 +61,7 @@
                   <TextField fx:id="usernameField" layoutX="211.0" layoutY="91.0" prefHeight="25.0" prefWidth="186.0" />
                   <Button fx:id="loginButton" layoutX="279.0" layoutY="178.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Log in" />
                   <Button layoutX="490.0" layoutY="91.0" mnemonicParsing="false" onAction="#newUserButtonAction" text="New User" />
+                  <Text fx:id="loginInfoMessage" layoutX="151.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             </children>
           </AnchorPane>
         </children>

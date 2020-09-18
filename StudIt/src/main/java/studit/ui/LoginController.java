@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import studit.core.LoginManager;
 
@@ -19,6 +20,7 @@ public class LoginController {
     @FXML TextField usernameField;
     @FXML Button loginButton;
     @FXML VBox vBox;
+    @FXML Text loginInfoMessage;
 
     public LoginController() {
     }
@@ -27,7 +29,7 @@ public class LoginController {
      * Initializes the LoginManager with usernames and passwords
     */
     public void initialize() {
-        studit.core.LoginManager.initialize();
+        studit.core.UserManager.initialize();
     }
 
     /*
@@ -49,8 +51,8 @@ public class LoginController {
             //Some way to close te initial window, or load new window instead.
         }
         else{
-            System.out.print("Failure, "+username+ ", "+password + " ");
-            //todo: Error message instead on application
+            System.out.println("Failure, "+username+ ", "+password + " ");
+            loginInfoMessage.setText("Error: The username and/or password is incorrect");
         }
     }
 
