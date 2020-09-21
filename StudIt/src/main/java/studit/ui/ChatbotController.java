@@ -24,7 +24,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import studit.core.Message;
+import studit.core.chatbot.Message;
 
 public class ChatbotController implements Initializable {
 	
@@ -106,7 +106,7 @@ public class ChatbotController implements Initializable {
 				
 	}
 	
-	/*
+	/**
 	 * Checks if wee need to add a line break to the user input to avoid text out of bounds
 	 */
 	private void checkForLineBreak() {
@@ -151,7 +151,7 @@ public class ChatbotController implements Initializable {
     	stage.setIconified(true);
     }
     
-    /*
+    /**
      * Moves our chatbot window when dragged by the toolbar
      */
     @FXML
@@ -162,7 +162,7 @@ public class ChatbotController implements Initializable {
     	}
     }
 
-    /*
+    /**
      * Sets new cursor location (x & yOffset) so that we can drag our application by the toolbar
      */
     @FXML
@@ -176,7 +176,7 @@ public class ChatbotController implements Initializable {
         yOffset = event.getSceneY();
     }
     
-    /*
+    /**
      * When user presses enter key, send the input to the Chatbot to perform an action accordingly
      */
     @FXML

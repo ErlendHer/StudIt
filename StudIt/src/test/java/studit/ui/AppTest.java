@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import studit.core.Chatbot;
+import studit.core.chatbot.Chatbot;
 import javafx.scene.control.Button;
 
 public class AppTest extends ApplicationTest {

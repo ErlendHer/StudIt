@@ -1,4 +1,4 @@
-package studit.core;
+package studit.core.chatbot;
 
 import studit.ui.ChatbotController;
 
@@ -12,8 +12,9 @@ public class Message {
         this.user = user;
     }
     
-    /*
+    /**
      * Returns formatted text with correct line breaks
+     * @return String ready to be printed to the screen
      */
     public String getText() {
     	
@@ -33,17 +34,6 @@ public class Message {
     	output += line;
     	
     	return output;
-    	
-    	
-    	/*
-    	String output = "";
-    	for (int i = 0; i < text.length(); i++) {
-    		output += text.charAt(i);
-    		if (i % (ChatbotController.lineBreakLength - 8) == 0 && i != 0) {
-    			output += "\n";
-    		}
-    	} */
-    	
 
     }
 

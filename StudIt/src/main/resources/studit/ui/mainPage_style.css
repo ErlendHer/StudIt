@@ -1,18 +1,9 @@
 .list-view {
     -fx-background-color: none;
     background-color: none; 
-
 }
 
-.list-cell:hover {
-    font-weight: bold;
-    -fx-font-weight: bold;
-
-    border-width: 4px;
-    -fx-border-width: 4px;
-}
-
-.list-cell:even{
+.list-view .list-cell:even{
      background-color: none;
     -fx-background-color: none;
 
@@ -22,28 +13,25 @@
     border-color: black;
     -fx-border-color: black;
 
-    height: 55px;
-    -fx-box-height: 55px;
+    height: 35px;
+    -fx-box-height: 35px;
 
     font-size: 25;
     -fx-font-size: 25;
 
     font-family: "Avenir next";
     -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
 }
 
-.list-cell {
+.list-view .list-cell {
     background-color: none;
     -fx-background-color: none;
-
-    padding: 5px;
-    -fx-padding: 5px;
-
-    -fx-selection-bar: pink;
-    -fx-selection-bar-non-focused: pink ;
 }
 
- .list-cell:odd{
+.list-view .list-cell:odd{
     background-color: none;
     -fx-background-color: none;
 
@@ -53,8 +41,8 @@
     border-color: black;
     -fx-border-color: black;
 
-    height: 55px;
-    -fx-box-height: 55px;
+    height: 35px;
+    -fx-box-height: 35px;
 
     font-size: 25;
     -fx-font-size: 25;
@@ -62,9 +50,12 @@
     font-family: "Avenir next";
     -fx-font-family: "Avenir next";
 
+    padding: 4px;
+    -fx-padding: 4px;
+
 }
 
-.list-cell:empty{
+.list-view .list-cell:empty{
     opacity: 0;
     -fx-opacity: 0;
 

@@ -95,7 +95,7 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.4</version>
 				<configuration>
-					<mainClass>studit.ui.App</mainClass>
+					<mainClass>studit.ui.LoginApp</mainClass>
 				</configuration>
             </plugin>
 
@@ -157,7 +157,7 @@
                     </execution>
                     <execution>
                         <id>jacoco-report</id>
-                        <phase>verify</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>

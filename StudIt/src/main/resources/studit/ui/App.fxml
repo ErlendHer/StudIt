@@ -81,7 +81,7 @@
    <center>
       <VBox prefHeight="263.0" prefWidth="196.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="chatbot_btn" mnemonicParsing="false" prefHeight="70.0" prefWidth="340.0" text="Åpne Chatbot" textFill="WHITE">
+            <Button fx:id="chatbot_btn" mnemonicParsing="false" prefHeight="70.0" prefWidth="340.0" onAction="#openChatBot" text="Åpne Chatbot" textFill="WHITE">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>

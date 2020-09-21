@@ -1,4 +1,4 @@
-package studit.core;
+package studit.core.chatbot;
 
 import java.io.IOException;
 

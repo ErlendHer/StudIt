@@ -1,11 +1,11 @@
-package core;
+package studit.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import studit.core.ChatbotManager;
+import studit.core.chatbot.ChatbotManager;
 
 public class ChatbotManagerTest {
 	
