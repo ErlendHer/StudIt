@@ -56,6 +56,9 @@ public class LoginController {
         }
     }
 
+    /**
+    * Pops up a new window when pressed. Loads the "newUser.fxml" file.
+    */
     public void newUserButtonAction() {
         try {
             BorderPane pane = FXMLLoader.load(getClass().getResource("newUser.fxml"));

@@ -17,6 +17,12 @@ public class newUserController {
     @FXML Button saveNewUserButton;
     @FXML Text infoTextField;
 
+    /**
+    * Makes a new User-object, and sets the four values. Uses the UserManager.addUser to check if
+    * the username is taken.
+    * @if the username is taken: Produces an error message. Does not close the window.
+    * @else: Saves the user in the hashmap /database. Closes the window.
+    */
     @FXML public void saveNewUserAction() {
         User user = new User();
         user.setName(nameField.getText());

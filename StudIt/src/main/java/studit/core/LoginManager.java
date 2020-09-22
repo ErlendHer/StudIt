@@ -43,7 +43,7 @@ public class LoginManager{
         return string;
     }
 
-    /*
+    /**
     * Testing
     */
     public static void main(String[] args) {
