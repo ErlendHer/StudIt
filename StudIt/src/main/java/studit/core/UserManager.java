@@ -14,7 +14,7 @@ public class UserManager {
         addUser(admin);
     }
 
-    /*
+    /**
     * returns true if successfully adds user, returns false if username is taken
     */
     public static boolean addUser(User user) {
@@ -47,7 +47,7 @@ public class UserManager {
     /**
      * Checks if the user exist in the database, to login
      * @param username Username of the user to be checked
-     * @return @true if the user exists
+     * @return true if the user exists
      */
     public static boolean containsUser(String username) {
         for (User user : users) {

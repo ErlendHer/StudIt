@@ -3,17 +3,14 @@ package studit.core;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class LoginManager{
 
-    private  static HashMap<String, String>  DB = new HashMap<String, String>();
-
     public LoginManager(){
     }
 
-    /*
+    /**
      * Checks if the username and password exists together in the database
      * @param username - The username to be checked
      * @param password - The password to be checked
@@ -23,7 +20,7 @@ public class LoginManager{
         return UserManager.containsUser(username, password);
     }
 
-    /*
+    /**
     * Writes a string (for example a password) to a simple text file
     * @param string - The string that will be written to the text file
     */
@@ -32,7 +29,7 @@ public class LoginManager{
         outFile.println(string);
         outFile.close();
     }
-    /*
+    /**
      * Reads a simple line from a text file
      * @return the string from the text file
      */
@@ -52,11 +49,6 @@ public class LoginManager{
             System.out.println(password);
         } catch (Exception e){ System.out.println("Failure..."); }
     }
-
-
-
-    
-
     
 
 }
