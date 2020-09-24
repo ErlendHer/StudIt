@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import studit.core.LoginManager;
 
@@ -17,8 +18,10 @@ public class LoginController {
 
     @FXML PasswordField passwordField;
     @FXML TextField usernameField;
-    @FXML Button loginButton;
+    @FXML Button login_btn;
     @FXML VBox vBox;
+    @FXML Text registerUser;
+    @FXML Text forgotPassword;
 
     public LoginController() {
     }
@@ -29,6 +32,20 @@ public class LoginController {
     public void initialize() {
         studit.core.LoginManager.initialize();
     }
+    /** Method to register new user
+     
+    */
+    public void registerUser(){
+        // Code 
+    }
+
+    /*
+    * Checks if email is registered, sends password to user if it is
+    */
+    public void forgotPassword(){
+        //code
+    }
+
 
     /*
     * Checks if login credentials are correct, logs in if it is. Else produces an error message in the application
