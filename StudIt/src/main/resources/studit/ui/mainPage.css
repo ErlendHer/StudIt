@@ -1,0 +1,108 @@
+#borderpane {
+    -fx-background-color:  #cee7f8;
+    background-color:  #cee7f8;
+}
+
+#searchbar {
+    -fx-background-color: white;
+    -fx-border-radius: 30%;
+    -fx-margin: 80px 40px 80px 0;
+    -fx-padding: 0 0 0 20;
+}
+
+#coursesList {
+    -fx-background-color: white;
+    -fx-border-radius: 30%;
+    -fx-margin: 0px 40px 20px 60;
+    -fx-padding: 2 10 10 10;
+}
+
+#menu {
+    -fx-background-color: white;
+
+}
+
+.list-view {
+    -fx-background-color: none;
+    background-color: none; 
+}
+
+.list-view .list-cell:even{
+      background-color: none;
+    -fx-background-color: none;
+
+    border-top-width: 1px;
+    -fx-border-top-width: 1px;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+
+    height: 35px;
+    -fx-box-height: 35px;
+
+    font-size: 25;
+    -fx-font-size: 25;
+
+    font-family: "Avenir next";
+    -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
+
+    margin: 4px;
+    -fx-margin: 4px;
+
+}
+
+.list-view .list-cell:odd{
+    background-color: none;
+    -fx-background-color: none;
+
+    border-top-width: 1px;
+    -fx-border-top-width: 1px;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+
+    height: 35px;
+    -fx-box-height: 35px;
+
+    font-size: 25;
+    -fx-font-size: 25;
+
+    font-family: "Avenir next";
+    -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
+
+    margin: 4px;
+    -fx-margin: 4px;
+
+}
+
+.list-view .list-cell:empty{
+    opacity: 0;
+    -fx-opacity: 0;
+}
+
+#chatbot_btn, #ntnu_btn, #mainPage_btn, #logout_btn {
+    -fx-background-color: white;
+}
+
+#chatbot_btn:hover, #ntnu_btn:hover, #mainPage_btn:hover, #logout_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    -fx-background: linear-gradient(right, #0688fa 0%, #0688fa 51%, #2dabf9 90%);
+
+    border-bottom: grey;
+    -fx-border-bottom: grey;
+
+    border-top: grey;
+    -fx-border-top: grey;
+    }
+
+
+
+
+
+
