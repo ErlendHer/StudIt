@@ -13,13 +13,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="rootPane" fx:id="rootPane" prefHeight="1020.0" prefWidth="1612.0" stylesheets="@mainPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studit.ui.AppController">
+<BorderPane id="rootPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@mainPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studit.ui.AppController">
    <top>
       <HBox prefHeight="232.0" prefWidth="1642.0">
          <children>
             <VBox prefHeight="232.0" prefWidth="1830.0">
                <children>
-                  <HBox prefHeight="232.0" prefWidth="1642.0" style="-fx-background-color: #c9efff;">
+                  <HBox prefHeight="235.0" prefWidth="1612.0" style="-fx-background-color: #c9efff;">
                      <children>
                         <HBox alignment="CENTER" minWidth="-Infinity" prefHeight="201.0" prefWidth="318.0" style="-fx-background-color: white;">
                            <children>
@@ -30,17 +30,17 @@
                               </ImageView>
                            </children>
                            <HBox.margin>
-                              <Insets right="60.0" />
+                              <Insets />
                            </HBox.margin>
                         </HBox>
-                        <HBox id="searchbar" alignment="CENTER_LEFT" maxWidth="1205.0" prefHeight="100.0" prefWidth="1186.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+                        <HBox id="searchbar" alignment="CENTER_LEFT" maxHeight="70.0" prefHeight="70.0" prefWidth="2171.0" style="-fx-background-color: white; -fx-background-radius: 30;">
                            <children>
                               <ImageView fitHeight="49.0" fitWidth="47.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/search.png" />
                                  </image>
                               </ImageView>
-                              <TextField id="search_field" prefHeight="59.0" prefWidth="1032.0" promptText="Søk på fag" style="-fx-background-color: white; -fx-background-radius: 20;">
+                              <TextField id="search_field" prefHeight="42.0" prefWidth="1032.0" promptText="Søk på fag" style="-fx-background-color: white; -fx-background-radius: 20;">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
@@ -53,7 +53,7 @@
                               <Insets left="20.0" />
                            </padding>
                            <HBox.margin>
-                              <Insets bottom="80.0" right="40.0" top="80.0" />
+                              <Insets bottom="80.0" left="40.0" right="40.0" top="40.0" />
                            </HBox.margin>
                         </HBox>
                      </children>
@@ -67,7 +67,7 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="764.0" prefWidth="866.0" style="-fx-background-color: #c9efff#c9efff;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="892.0" prefWidth="1294.0" style="-fx-background-color: #c9efff#c9efff;" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="64.0" prefWidth="1116.0">
                <children>
@@ -92,12 +92,12 @@
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets left="70.0" top="50.0" />
+                  <Insets left="70.0" />
                </VBox.margin>
             </HBox>
-            <ListView id="coursesList" fx:id="coursesList" prefHeight="624.0" prefWidth="1186.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+            <ListView id="coursesList" fx:id="coursesList" prefHeight="1012.0" prefWidth="1214.0" style="-fx-background-color: white; -fx-background-radius: 30;">
                <VBox.margin>
-                  <Insets bottom="20.0" left="60.0" right="40.0" />
+                  <Insets bottom="40.0" left="40.0" right="40.0" />
                </VBox.margin>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
@@ -107,14 +107,14 @@
       </VBox>
    </center>
    <left>
-      <VBox id="menu" opacity="0.71" prefHeight="788.0" prefWidth="318.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+      <VBox id="menu" opacity="0.71" prefHeight="400.0" prefWidth="318.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Button id="mainPage_btn" fx:id="mainPage_btn" minHeight="-Infinity" mnemonicParsing="false" onAction="#mainPageAction" prefHeight="86.0" prefWidth="318.0" style="-fx-background-color: transparent;" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="mainPage_btn" fx:id="mainPageAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="86.0" prefWidth="318.0" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Button id="chatbot_btn" fx:id="chatbot_btn" minHeight="-Infinity" mnemonicParsing="false" onAction="#openChatBot" prefHeight="79.0" prefWidth="318.0" style="-fx-background-color: transparent;" text="Chatbot" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="chatbot_btn" fx:id="openChatBot" minHeight="-Infinity" mnemonicParsing="false" prefHeight="79.0" prefWidth="318.0" text="Chatbot" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
@@ -122,12 +122,12 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button id="ntnu_btn" fx:id="ntnu_btn" minHeight="-Infinity" mnemonicParsing="false" onAction="#ntnuAction" prefHeight="84.0" prefWidth="318.0" style="-fx-background-color: transparenttransparent;" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="ntnu_btn" fx:id="ntnuAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="84.0" prefWidth="318.0" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Button id="logout_btn" fx:id="logout_btn" minHeight="-Infinity" mnemonicParsing="false" onAction="#logoutAction" prefHeight="91.0" prefWidth="318.0" style="-fx-background-color: transparenttransparent;" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="logout_btn" fx:id="logoutAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="318.0" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>

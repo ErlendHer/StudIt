@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
 import studit.core.chatbot.Chatbot;
 import javafx.scene.control.Button;
 
@@ -13,10 +14,13 @@ public class CourseController {
     private String comment;
 
     @FXML
+    private BorderPane rootPane;
+
+    @FXML
     private Label label;
 
     @FXML
-    private Button mainpage_btn;
+    private Button mainPage_btn;
 
     @FXML
     private Button chatbot_btn;
@@ -30,8 +34,11 @@ public class CourseController {
     @FXML
     private TextArea commentField;
 
+    /*
+    * logs user out, and goes to login scene
+     */
     @FXML
-    void logoutAction(ActionEvent event) {
+    void logoutAction() {
 
     }
 
@@ -39,14 +46,25 @@ public class CourseController {
     * Goes back to main page
     */
     @FXML
-    void mainpageAction(ActionEvent event) {
+    void mainPageAction() {
+          try {
+               this.rootPane = new FXMLLoader.load(getClass().getResource("App.fxml"));
+               appController.initialize();
 
+               // BorderPane newPane = FXMLLoader.load(getClass().getResource("App.fxml"));
+               // rootPane.getChildren().setAll(newPane);
 
-    }
+          } catch (IOException e) {
+               System.out.println(e);
+               }
+          }
 
+    /*
+    * Gives the user a choice to open NTNU homepage in web-browser
+    */
     @FXML
     void ntnuAction(ActionEvent event) {
-
+          System.out.println("NTNU");
     }
 
     @FXML
@@ -62,8 +80,9 @@ public class CourseController {
        label.setText(text);
    }
 
-   public void writeComment(String text){
+   public void writeComment(){
         comment =  commentField.getText();
+        System.out.println(comment.toString());
         //code to post the comment to the comment-section
         //should maybe be in recent written order
    }
