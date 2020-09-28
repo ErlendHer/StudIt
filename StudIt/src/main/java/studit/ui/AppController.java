@@ -37,6 +37,9 @@ public class AppController {
     private BorderPane rootPane;
 
     @FXML
+    private AnchorPane mainPane;
+
+    @FXML
     private ListView<String> coursesList;
 
      @FXML
@@ -84,13 +87,15 @@ public class AppController {
     */
     @FXML
     void logoutAction(ActionEvent event) {
-
+        //code
     }
+
+
     /** redirects user to the main page
     */
     @FXML
-    void mainPageAction(ActionEvent event) {
-
+    void mainPageAction() {
+        //nothing should really happen when you are in the home page other than maybe refresh(?)
     }
 
 
@@ -103,18 +108,21 @@ public class AppController {
 		coursesList.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			@Override
 			public void handle(MouseEvent arg0) {
-				String name = coursesList.getSelectionModel().getSelectedItem();
-                    System.out.println(name);	
+				String name = coursesList.getSelectionModel().getSelectedItem();	
                     		
                     try {
-                        BorderPane newPane = FXMLLoader.load(getClass().getResource("Course.fxml"));
-                        rootPane.getChildren().setAll(newPane);
+                        this.rootPane = new FXMLLoader.load(getClass().getResource("Course.fxml"));
+
+                        // AnchorPane newPane = FXMLLoader.load(getClass().getResource("Course.fxml"));
+                        // mainPane.getChildren().addAll(newPane);
+                       // rootPane.getChildren().addAll(newPane);
 
                         } catch (IOException e) {
                             System.out.println(e);
                         }
 			}
-		});
+        });
+        return rootPane;
 	}
     
     /** This function should actually fetch data from a database. This will be implemented later.

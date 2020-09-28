@@ -22,39 +22,7 @@
 
 }
 
-.list-view {
-    -fx-background-color: none;
-    background-color: none; 
-}
-
-.list-view .list-cell:even{
-      background-color: none;
-    -fx-background-color: none;
-
-    border-top-width: 1px;
-    -fx-border-top-width: 1px;
-
-    border-top-color: grey;
-    -fx-border-top-color: grey;
-
-    height: 35px;
-    -fx-box-height: 35px;
-
-    font-size: 25;
-    -fx-font-size: 25;
-
-    font-family: "Avenir next";
-    -fx-font-family: "Avenir next";
-
-    padding: 4px;
-    -fx-padding: 4px;
-
-    margin: 4px;
-    -fx-margin: 4px;
-
-}
-
-.list-view .list-cell:odd{
+.list-cell:even{
     background-color: none;
     -fx-background-color: none;
 
@@ -81,26 +49,63 @@
 
 }
 
-.list-view .list-cell:empty{
+.list-cell:odd{
+    background-color: none;
+    -fx-background-color: none;
+
+    border-top-width: 1px;
+    -fx-border-top-width: 1px;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+
+    height: 35px;
+    -fx-box-height: 35px;
+
+    font-size: 25;
+    -fx-font-size: 25;
+
+    font-family: "Avenir next";
+    -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
+
+    margin: 4px;
+    -fx-margin: 4px;
+
+}
+
+.list-cell:hover{
+    background-color: azure;
+}
+
+.list-cell:empty{
     opacity: 0;
     -fx-opacity: 0;
 }
 
 #chatbot_btn, #ntnu_btn, #mainPage_btn, #logout_btn {
     -fx-background-color: white;
+    background-color: white;
 }
 
 #chatbot_btn:hover, #ntnu_btn:hover, #mainPage_btn:hover, #logout_btn:hover {
-    background-position: right center; /* change the direction of the change here */
-    -fx-background: linear-gradient(right, #0688fa 0%, #0688fa 51%, #2dabf9 90%);
+    
+    background-color: black;
+    -fx-background-color: black;
 
-    border-bottom: grey;
-    -fx-border-bottom: grey;
+    border-bottom-color: grey;
+    -fx-border-bottom-color: grey;
 
-    border-top: grey;
-    -fx-border-top: grey;
+    border-top-color: grey;
+    -fx-border-top-color: grey;
     }
 
+    #chatbot_btn:active, #ntnu_btn:active, #mainPage_btn:active, #logout_btn:active {
+        background-color: black;
+        -fx-background-color: black;
+    }
 
 
 
