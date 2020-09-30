@@ -29,7 +29,9 @@ public class newUserController {
         user.setUsername(usernameField.getText());
         user.setMail(mailField.getText());
         user.setPassword(userPasswordField.getText());
+        
         boolean successfullyAdded = UserManager.addUser(user);
+
         Stage stage = (Stage) saveNewUserButton.getScene().getWindow();
         if (successfullyAdded) {
             stage.close();

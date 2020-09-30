@@ -1,20 +1,17 @@
 package studit.core;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserManager {
 
     //The current list of users. todo: make this saving to json file
-    private static ArrayList<User> users = new ArrayList<>();
+    //private static ArrayList<User> users = new ArrayList<>();
 
     public static void initialize() {
         User user = new User("John Appleseed", "user", "user@studit.com", "password");
@@ -30,6 +27,7 @@ public class UserManager {
         if (!containsUser(user.getUsername())) {
             ArrayList<User> users = getUsersFromDB();
             users.add(user);
+            addUsersToDB(users);
 
             return true;
         }
@@ -45,6 +43,7 @@ public class UserManager {
      * @return true if the user exists
      */
     public static boolean containsUser(String username, String password){
+        ArrayList<User> users = getUsersFromDB();
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 if (user.getPassword().equals(password)) {
@@ -61,6 +60,7 @@ public class UserManager {
      * @return true if the user exists
      */
     public static boolean containsUser(String username) {
+        ArrayList<User> users = getUsersFromDB();
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 return true;
@@ -69,43 +69,53 @@ public class UserManager {
         return false;
     }
 
-    private static void addUsersToDB(ArrayList<User> users) {
+    /**
+     * Saves the users to json file
+     * @param users - The users to be saved to the database (json file)
+     */
+    private static void addUsersToDB(List<User> users) {
+        
         ObjectMapper mapper = new ObjectMapper();
-
         try {
             mapper.writeValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), users);
-        
+            mapper.writeValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), "");
+
         } catch (IOException e) {
-            System.out.println("Error occured while printing user json to file");
+            System.out.println("Error occured while saving users to json file");
             e.printStackTrace();
         }
-        
+
     }
 
+    /**
+     * Loads the users from database (the json file)
+     * @return The List of users that is fetched from the file
+     */
     private static ArrayList<User> getUsersFromDB() {
+        
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            ArrayList<User> users = mapper.readValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile()
-            , new TypeReference<ArrayList<User>>(){});  
+            List<User> usersList = Arrays.asList(mapper.readValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), User[].class));
+            return new ArrayList<User>(usersList);
 
-            
         } catch (IOException e) {
-            System.out.println("Error occured while loading from json file");
+            System.out.println("Error occured while fetching users from json file");
             e.printStackTrace();
+            return null;
         }
-        return users;
-        
+
     }
 
     public static void main(String[] args) {
-        //initialize();
-        //System.out.println(users);
         ArrayList<User> users = new ArrayList<>();
-        User user = new User("p","p", "p", "p");
+        User user = new User("1","2", "3", "4");
         User user2 = new User("a","b", "c", "d");
+        users.add(user);
+        users.add(user2);
         addUsersToDB(users);
         ArrayList<User> loadedUsers = getUsersFromDB();
-        System.out.print(loadedUsers.get(0).getName());
+        System.out.println(loadedUsers);
+        System.out.println();
     }
 }
