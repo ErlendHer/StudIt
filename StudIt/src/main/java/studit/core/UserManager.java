@@ -14,6 +14,7 @@ public class UserManager {
     //private static ArrayList<User> users = new ArrayList<>();
 
     public static void initialize() {
+        clearDB();
         User user = new User("John Appleseed", "user", "user@studit.com", "password");
         User admin = new User("Mark Brownie", "admin", "admin@studit.com", "password1");
         addUser(user);
@@ -61,6 +62,9 @@ public class UserManager {
      */
     public static boolean containsUser(String username) {
         ArrayList<User> users = getUsersFromDB();
+        if (users == null){
+            return false;
+        }
         for (User user : users) {
             if (user.getUsername().equals(username)) {
                 return true;
@@ -107,15 +111,14 @@ public class UserManager {
 
     }
 
+    /**
+    * Should clear the user database, making it empty
+    */
+    private static void clearDB() {
+        addUsersToDB(null);
+    }
+
     public static void main(String[] args) {
-        ArrayList<User> users = new ArrayList<>();
-        User user = new User("1","2", "3", "4");
-        User user2 = new User("a","b", "c", "d");
-        users.add(user);
-        users.add(user2);
-        addUsersToDB(users);
-        ArrayList<User> loadedUsers = getUsersFromDB();
-        System.out.println(loadedUsers);
-        System.out.println();
+        initialize();
     }
 }

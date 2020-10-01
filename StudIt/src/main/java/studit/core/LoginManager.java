@@ -21,33 +21,10 @@ public class LoginManager{
     }
 
     /**
-    * Writes a string (for example a password) to a simple text file
-    * @param string - The string that will be written to the text file
-    */
-    public static void writeToFile(String string, String filename) throws FileNotFoundException {
-        PrintWriter outFile = new PrintWriter(filename);
-        outFile.println(string);
-        outFile.close();
-    }
-    /**
-     * Reads a simple line from a text file
-     * @return the string from the text file
-     */
-    public static String readFromFile(String filename) throws FileNotFoundException {
-        Scanner in = new Scanner(new FileReader(filename));
-        String string = in.nextLine();
-        in.close();
-        return string;
-    }
-
-    /**
     * Testing
     */
     public static void main(String[] args) {
-        try {
-            String password = readFromFile("keys.txt");
-            System.out.println(password);
-        } catch (Exception e){ System.out.println("Failure..."); }
+
     }
     
 

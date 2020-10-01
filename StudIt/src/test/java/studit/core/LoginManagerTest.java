@@ -21,16 +21,5 @@ public class LoginManagerTest{
         assertTrue(LoginManager.match("user", "password"));
     }
 
-    @Test
-    public void testWriteReadFromFile() {
-        String string = "test bla bla";
-        String filename = "testFile.txt";
-        try{
-            LoginManager.writeToFile(string, filename);
-            assertEquals(LoginManager.readFromFile(filename), string);
-        }
-        catch (Exception e){ fail("Writing or reading to file failed"); }
-    }
-
 
 }
