@@ -22,7 +22,6 @@ public class LoginController {
     @FXML VBox vBox;
     @FXML Text registerUser;
     @FXML Text forgotPassword;
-    @FXML Text loginInfoMessage;
 
     public LoginController() {
     }
@@ -31,7 +30,7 @@ public class LoginController {
      * Initializes the LoginManager with usernames and passwords
     */
     public void initialize() {
-        studit.core.UserManager.initialize();
+        studit.core.LoginManager.initialize();
     }
     /** Method to register new user
      
@@ -63,28 +62,13 @@ public class LoginController {
             stage.setScene(scene);
 		    stage.setTitle("Hello World");
             stage.show();
-            //LoginManager.writeToFile(password, "keys.txt");
+            LoginManager.writeToFile(password, "keys.txt");
             //Some way to close te initial window, or load new window instead.
         }
         else{
-            System.out.println("Failure, "+username+ ", "+password + " ");
-            loginInfoMessage.setText("Error: The username and/or password is incorrect");
+            System.out.print("Failure, "+username+ ", "+password + " ");
+            //todo: Error message instead on application
         }
     }
 
-    /**
-    * Pops up a new window when pressed. Loads the "newUser.fxml" file.
-    */
-    public void newUserButtonAction() {
-        try {
-            BorderPane pane = FXMLLoader.load(getClass().getResource("newUser.fxml"));
-            Stage stage = new Stage();
-            Scene scene = new Scene(pane);
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception e) {
-            System.out.println("Coud not open newUser.fxml");
-        }
-    }
 }
