@@ -10,11 +10,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserManager {
 
-    //The current list of users. todo: make this saving to json file
-    //private static ArrayList<User> users = new ArrayList<>();
-
     public static void initialize() {
-        clearDB();
+        //clearDB();
         User user = new User("John Appleseed", "user", "user@studit.com", "password");
         User admin = new User("Mark Brownie", "admin", "admin@studit.com", "password1");
         addUser(user);
@@ -81,8 +78,9 @@ public class UserManager {
         
         ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), users);
-            mapper.writeValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), "");
+            //Note: When running localy, we need start the path with "Studit/src/..."
+            //But, when using mvn javafx:run from cd Studit, the path should start with "src/..."
+            mapper.writeValue(Paths.get("src/main/resources/studit/db/userDB.json").toFile(), users);
 
         } catch (IOException e) {
             System.out.println("Error occured while saving users to json file");
@@ -100,7 +98,11 @@ public class UserManager {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            List<User> usersList = Arrays.asList(mapper.readValue(Paths.get("StudIt/src/main/resources/studit/db/userDB.json").toFile(), User[].class));
+            //Note: When running localy, we need start the path with "Studit/src/..."
+            //But, when using mvn javafx:run from cd Studit, the path should start with "src/..."
+            List<User> usersList = Arrays.asList(mapper.readValue(Paths.get(
+            "src/main/resources/studit/db/userDB.json").toFile(), User[].class));
+            
             return new ArrayList<User>(usersList);
 
         } catch (IOException e) {
@@ -116,6 +118,19 @@ public class UserManager {
     */
     private static void clearDB() {
         addUsersToDB(null);
+    }
+
+    public static void main2(String[] args) {
+        User user = new User("x", "x", "x", "x");
+        User user2 = new User("y", "y", "y", "y");
+        ArrayList<User> users = new ArrayList<>();
+        users.add(user);
+        users.add(user2);
+        addUsersToDB(users);
+        ArrayList<User> users2 = getUsersFromDB();
+        for (User u : users2) {
+            System.out.println(u.getName() + " + " + u.getUsername());
+        }
     }
 
     public static void main(String[] args) {
