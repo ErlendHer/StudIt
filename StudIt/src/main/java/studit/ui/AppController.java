@@ -12,18 +12,30 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextField;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import studit.core.chatbot.Chatbot;
 
 public class AppController { 
-    
+
+    @FXML private ListView<String> coursesList;
+    @FXML private Button mainPageAction;
+    @FXML private Button openChatBot;
+    @FXML private Button ntnuAction;
+    @FXML private Button logoutAction;
+    @FXML private BorderPane rootPane;
+    @FXML private AnchorPane mainPane;
+
     public static Chatbot chatbot = null;
     ObservableList<String> list = FXCollections.observableArrayList();
 
+    /**
+    * Function to initialize AppController
+    * @return none
+    */
     @FXML
     public void initialize() {
         loadData();
@@ -32,31 +44,12 @@ public class AppController {
         //Actions on clicked list item
         mouseClicked();
     }
-
-    @FXML
-    private BorderPane rootPane;
-
-    @FXML
-    private AnchorPane mainPane;
-
-    @FXML
-    private ListView<String> coursesList;
-
-     @FXML
-    private TextField search_field;
-
-    @FXML
-    private Button chatbot_btn;
-
-    @FXML
-    private Button ntnu_btn;
-
-    @FXML
-    private Button mainPage_btn;
-
-    @FXML
-    private Button logout_btn;
-
+    
+   
+    /**
+    * Gives the user a choice to open NTNU homepage in web-browser
+    * @return none
+    */
     @FXML
     void openChatBot(ActionEvent event) {
         if (chatbot == null) {
@@ -70,31 +63,60 @@ public class AppController {
         chatbot = null;
     }
 
+    /**
+    * Function to search for subjects. The listview will then only show subjects with 
+    * the letters in the search field
+    * @return none
+    */
     @FXML
     void searchView(ActionEvent event) {
 
     }
 
+    /**
+    * Should give the option to go to the subjects web-page
+    * @return none
+    */
     @FXML
-    void ntnuAction(ActionEvent event) {
+    void handleNtnuAction(ActionEvent event) {
 
         //go to NTNU homepage (question if you want to open web-browser)?
         //or a new window with information about NTNU?
 
     }
 
-     /** Logs user out, and redirects to the login window
-    */
+     
+     /** 
+     * logs user out, and opens to login scene, closes current scene
+     */
     @FXML
-    void logoutAction(ActionEvent event) {
-        //code
-    }
+    void handleLogoutAction() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            Parent root = loader.load();
+
+            Stage controllerStage = (Stage) mainPageAction.getScene().getWindow();
+            // do what you have to do
+            controllerStage.hide();
+        
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            
+             
+
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+	}
 
 
-    /** redirects user to the main page
+    /** 
+    * redirects user to the main page
+    * @return none
     */
     @FXML
-    void mainPageAction() {
+    void handleMainPageAction() {
         //nothing should really happen when you are in the home page other than maybe refresh(?)
     }
 
@@ -108,22 +130,31 @@ public class AppController {
 		coursesList.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			@Override
 			public void handle(MouseEvent arg0) {
-				String name = coursesList.getSelectionModel().getSelectedItem();	
+				String name = coursesList.getSelectionModel().getSelectedItem();
+                    System.out.println(name);	
                     		
                     try {
-                        this.rootPane = new FXMLLoader.load(getClass().getResource("Course.fxml"));
-
-                        // AnchorPane newPane = FXMLLoader.load(getClass().getResource("Course.fxml"));
-                        // mainPane.getChildren().addAll(newPane);
-                       // rootPane.getChildren().addAll(newPane);
-
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Course.fxml"));
+                        Parent root = loader.load();
+   
+                    
+                        CourseController courseController = loader.getController();
+                        courseController.setLabel(name);
+   
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(root));
+                        stage.show();
+   
                         } catch (IOException e) {
                             System.out.println(e);
                         }
 			}
-        });
-        return rootPane;
+		});
 	}
+
+
+   
+	
     
     /** This function should actually fetch data from a database. This will be implemented later.
     * @return None

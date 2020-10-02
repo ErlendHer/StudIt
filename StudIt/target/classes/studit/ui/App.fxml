@@ -109,12 +109,12 @@
    <left>
       <VBox id="menu" opacity="0.71" prefHeight="400.0" prefWidth="318.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Button id="mainPage_btn" fx:id="mainPageAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="86.0" prefWidth="318.0" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="mainPage_btn" fx:id="mainPageAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleMainPageAction" prefHeight="86.0" prefWidth="318.0" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Button id="chatbot_btn" fx:id="openChatBot" minHeight="-Infinity" mnemonicParsing="false" prefHeight="79.0" prefWidth="318.0" text="Chatbot" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="chatbot_btn" fx:id="openChatBot" minHeight="-Infinity" mnemonicParsing="false" onAction="#openChatBot" prefHeight="79.0" prefWidth="318.0" text="Chatbot" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
@@ -122,17 +122,17 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button id="ntnu_btn" fx:id="ntnuAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="84.0" prefWidth="318.0" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="ntnu_btn" fx:id="ntnuAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleNtnuAction" prefHeight="84.0" prefWidth="318.0" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Button id="logout_btn" fx:id="logoutAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="318.0" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="logout_btn" fx:id="logoutAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="91.0" prefWidth="318.0" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="444.0" stroke="WHITE" strokeType="INSIDE" width="318.0" VBox.vgrow="ALWAYS" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="228.0" stroke="WHITE" strokeType="INSIDE" width="318.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </left>

@@ -16,7 +16,7 @@
 
 <BorderPane id="rootPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@mainPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studit.ui.CourseController">
    <top>
-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="1282.0">
+      <HBox prefHeight="232.0" prefWidth="2000.0">
          <children>
             <VBox prefHeight="232.0" prefWidth="1700.0">
                <children>
@@ -34,7 +34,7 @@
                               <Insets />
                            </HBox.margin>
                         </HBox>
-                        <HBox id="searchbar" alignment="CENTER_LEFT" maxHeight="60.0" prefHeight="60.0" prefWidth="1247.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+                        <HBox id="searchbar" alignment="CENTER_LEFT" maxHeight="60.0" prefHeight="60.0" prefWidth="2000.0" style="-fx-background-color: white; -fx-background-radius: 30;">
                            <children>
                               <ImageView fitHeight="49.0" fitWidth="47.0" opacity="0.64" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -68,7 +68,7 @@
       </HBox>
    </top>
    <center>
-      <FlowPane prefHeight="1038.0" prefWidth="962.0" style="-fx-background-color: #d4f6ff#d4f6ff #d4f6ff#d4f6ff;">
+      <FlowPane prefHeight="1038.0" prefWidth="2000.0" style="-fx-background-color: #d4f6ff#d4f6ff #d4f6ff#d4f6ff;">
          <children>
             <HBox prefHeight="94.0" prefWidth="913.0">
                <children>
@@ -100,20 +100,20 @@
             </TextArea>
             <VBox prefHeight="228.0" prefWidth="278.0">
                <children>
-                  <TextArea prefHeight="60.0" prefWidth="278.0">
+                  <TextArea fx:id="comment1" prefHeight="60.0" prefWidth="278.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </TextArea>
-                  <TextArea prefHeight="63.0" prefWidth="278.0" />
-                  <TextArea prefHeight="65.0" prefWidth="278.0" />
+                  <TextArea fx:id="comment2" prefHeight="63.0" prefWidth="278.0" />
+                  <TextArea fx:id="comment3" prefHeight="65.0" prefWidth="278.0" />
                   <TextArea prefHeight="61.0" prefWidth="278.0" />
                </children>
                <FlowPane.margin>
                   <Insets left="20.0" top="10.0" />
                </FlowPane.margin>
             </VBox>
-            <TextArea prefHeight="55.0" prefWidth="872.0" promptText="Skriv en kommentar">
+            <TextArea fx:id="commentField" prefHeight="55.0" prefWidth="872.0" promptText="Skriv en kommentar">
                <font>
                   <Font size="18.0" />
                </font>
@@ -121,7 +121,7 @@
                   <Insets right="800.0" top="60.0" />
                </FlowPane.margin>
             </TextArea>
-            <Button mnemonicParsing="false" text="Legg til">
+            <Button id="addComment_btn" fx:id="addCommentAction" mnemonicParsing="false" onAction="#handleAddCommentAction" style="-fx-background-radius: 3;" text="Legg til">
                <font>
                   <Font name="Avenir Book" size="18.0" />
                </font>
@@ -138,7 +138,7 @@
    <left>
       <VBox id="menu" minHeight="-Infinity" minWidth="-Infinity" opacity="0.71" prefHeight="566.0" prefWidth="318.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Button id="mainPage_btn" fx:id="mainPageAction" minHeight="-Infinity" mnemonicParsing="false" prefHeight="86.0" prefWidth="318.0" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="mainPage_btn" fx:id="mainPageAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleMainPageAction" prefHeight="86.0" prefWidth="318.0" text="Hjem" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
@@ -151,12 +151,12 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button id="ntnu_btn" fx:id="ntnuAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#ntnuAction" prefHeight="84.0" prefWidth="318.0" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="ntnu_btn" fx:id="ntnuAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleNtnuAction" prefHeight="84.0" prefWidth="318.0" text="NTNU" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
             </Button>
-            <Button id="logout_btn" fx:id="logoutAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#logoutAction" prefHeight="91.0" prefWidth="318.0" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
+            <Button id="logout_btn" fx:id="logoutAction" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="91.0" prefWidth="318.0" text="Logg ut" textAlignment="CENTER" textFill="#888889" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Avenir Next Bold" size="24.0" />
                </font>
