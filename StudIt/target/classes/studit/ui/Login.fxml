@@ -111,15 +111,15 @@
                         <Font name="Avenir Book" size="14.0" />
                      </font>
                   </Text>
-                  <Text layoutX="132.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brukernavn" />
-                  <Text layoutX="151.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passord" />
-                  <TextField fx:id="usernameField" layoutX="211.0" layoutY="91.0" prefHeight="25.0" prefWidth="186.0" />
-                  <Button fx:id="loginButton" layoutX="279.0" layoutY="178.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Log in" />
-                  <Button layoutX="490.0" layoutY="91.0" mnemonicParsing="false" onAction="#newUserButtonAction" text="New User" />
-                  <Text fx:id="loginInfoMessage" layoutX="151.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            </children>
-          </AnchorPane>
-        </children>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
       </VBox>
    </center>
 </BorderPane>

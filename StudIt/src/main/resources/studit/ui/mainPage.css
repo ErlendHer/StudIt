@@ -1,0 +1,113 @@
+#borderpane {
+    -fx-background-color:  #cee7f8;
+    background-color:  #cee7f8;
+}
+
+#searchbar {
+    -fx-background-color: white;
+    -fx-border-radius: 30%;
+    -fx-margin: 80px 40px 80px 0;
+    -fx-padding: 0 0 0 20;
+}
+
+#coursesList {
+    -fx-background-color: white;
+    -fx-border-radius: 30%;
+    -fx-margin: 0px 40px 20px 60;
+    -fx-padding: 2 10 10 10;
+}
+
+#menu {
+    -fx-background-color: white;
+
+}
+
+.list-cell:even{
+    background-color: none;
+    -fx-background-color: none;
+
+    border-top-width: 1px;
+    -fx-border-top-width: 1px;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+
+    height: 35px;
+    -fx-box-height: 35px;
+
+    font-size: 25;
+    -fx-font-size: 25;
+
+    font-family: "Avenir next";
+    -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
+
+    margin: 4px;
+    -fx-margin: 4px;
+
+}
+
+.list-cell:odd{
+    background-color: none;
+    -fx-background-color: none;
+
+    border-top-width: 1px;
+    -fx-border-top-width: 1px;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+
+    height: 35px;
+    -fx-box-height: 35px;
+
+    font-size: 25;
+    -fx-font-size: 25;
+
+    font-family: "Avenir next";
+    -fx-font-family: "Avenir next";
+
+    padding: 4px;
+    -fx-padding: 4px;
+
+    margin: 4px;
+    -fx-margin: 4px;
+
+}
+
+.list-cell:hover{
+    background-color: azure;
+}
+
+.list-cell:empty{
+    opacity: 0;
+    -fx-opacity: 0;
+}
+
+#chatbot_btn, #ntnu_btn, #mainPage_btn, #logout_btn {
+    -fx-background-color: white;
+    background-color: white;
+}
+
+#chatbot_btn:hover, #ntnu_btn:hover, #mainPage_btn:hover, #logout_btn:hover {
+    
+    background-color: black;
+    -fx-background-color: black;
+
+    border-bottom-color: grey;
+    -fx-border-bottom-color: grey;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+    }
+
+    #chatbot_btn:active, #ntnu_btn:active, #mainPage_btn:active, #logout_btn:active {
+        background-color: black;
+        -fx-background-color: black;
+    }
+
+
+
+
+
