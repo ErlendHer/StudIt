@@ -12,24 +12,13 @@ public class LoginManagerTest{
 
     @BeforeEach
     public void init() {
-        LoginManager.initialize();
+        UserManager.initialize();
     }
 
     @Test
     public void testMatch() {
         assertFalse(LoginManager.match("user", "aaaa"));
         assertTrue(LoginManager.match("user", "password"));
-    }
-
-    @Test
-    public void testWriteReadFromFile() {
-        String string = "test bla bla";
-        String filename = "testFile.txt";
-        try{
-            LoginManager.writeToFile(string, filename);
-            assertEquals(LoginManager.readFromFile(filename), string);
-        }
-        catch (Exception e){ fail("Writing or reading to file failed"); }
     }
 
 
