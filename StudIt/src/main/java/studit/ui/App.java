@@ -25,18 +25,20 @@ public class App extends Application {
         FXMLLoader courseLoader = new FXMLLoader(getClass().getResource("Course.fxml"));
         Parent coursePane = courseLoader.load();
         Scene courseScene = new Scene(coursePane);
-
-        // injecting second scene into the controller of the first scene
-        AppController appController = (AppController) mainLoader.getController();
-        appController.setSecondScene(courseScene);
-
+        
         // injecting first scene into the controller of the second scene
         CourseController courseController = (CourseController) courseLoader.getController();
         courseController.setMainScene(mainScene);
 
+        // injecting second scene into the controller of the first scene
+        AppController appController = (AppController) mainLoader.getController();
+        courseController.setLabel(appController.getLabel());
+        appController.setSecondScene(courseScene);
+        
+
 		primaryStage.setScene(mainScene);
 		primaryStage.setTitle("StudIt");
         primaryStage.show();
-
+        System.out.println(appController.getLabel());
     }
 }

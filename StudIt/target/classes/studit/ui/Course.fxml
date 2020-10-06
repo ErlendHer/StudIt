@@ -35,9 +35,9 @@
                         </HBox>
                         <HBox prefHeight="94.0" prefWidth="1000.0">
                            <children>
-                              <HBox alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="500.0">
+                              <HBox alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="700.0">
                                  <children>
-                                    <Label id="label" fx:id="label" alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="300.0" text="TDT4109">
+                                    <Label id="label" fx:id="label" alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="400.0" text="Label">
                                        <font>
                                           <Font name="Avenir Next Bold" size="64.0" />
                                        </font>
@@ -66,7 +66,7 @@
                                     </Label>
                                  </children>
                               </HBox>
-                              <Label id="comments" fx:id="comments" alignment="BOTTOM_LEFT" contentDisplay="CENTER" prefHeight="94.0" prefWidth="200.0" text="Kommentarer" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                              <Label id="comments" fx:id="comments" alignment="BOTTOM_LEFT" contentDisplay="CENTER" prefHeight="94.0" prefWidth="400.0" text="Kommentarer" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
                                  <font>
                                     <Font name="Avenir Next Bold" size="24.0" />
                                  </font>
@@ -74,7 +74,7 @@
                                     <Insets right="5.0" />
                                  </padding>
                                  <HBox.margin>
-                                    <Insets left="130.0" top="50.0" />
+                                    <Insets left="30.0" top="50.0" />
                                  </HBox.margin>
                               </Label>
                               <HBox prefHeight="100.0" prefWidth="200.0" />
@@ -116,7 +116,7 @@
                   </TextArea>
                   <TextArea fx:id="comment2" prefHeight="63.0" prefWidth="278.0" />
                   <TextArea fx:id="comment3" prefHeight="65.0" prefWidth="278.0" />
-                  <TextArea prefHeight="61.0" prefWidth="278.0" />
+                  <TextArea id="comment4" fx:id="comment4" prefHeight="61.0" prefWidth="278.0" />
                </children>
                <FlowPane.margin>
                   <Insets left="20.0" top="10.0" />

@@ -43,16 +43,9 @@ public class CourseController implements Initializable {
     @FXML private TextArea courseText;
 
 
-    App app = new App();
-    Course course = new Course();
+
     public static Chatbot chatbot = null;
     private Scene mainScene;
-
-    public void setMainScene(Scene scene) {
-        mainScene = scene;
-    }
-
-
 
    	@Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,13 +54,25 @@ public class CourseController implements Initializable {
 
    /** 
     * Function to set the label - the name of the subject on the top of the page
-    * @param label1 the label to set
+    * @param label the label to set
     * @return none
     */
-   public void setLabel(String label) {
-       this.label.setText(label);
-   }
-     
+    @FXML
+    public void setLabel(String label) {
+        this.label.setText(label);
+    }
+
+
+    /** 
+    * Function to set the scene - to switch between scenes
+    * @param scene the label to set
+    * @return none
+    */
+   public void setMainScene(Scene scene) {
+        mainScene = scene;
+    }
+
+
     /**
     * logs user out, and goes to login scene
     * closes the current window
@@ -100,21 +105,14 @@ public class CourseController implements Initializable {
     */
     @FXML
     void handleMainPageAction(ActionEvent actionEvent) {
-        Stage primaryStage = (Stage)((Button)actionEvent.getSource()).getScene().getWindow();
-        primaryStage.setScene(mainScene);
-        // try {
-        //     FXMLLoader loader = new FXMLLoader(getClass().getResource("App.fxml"));
-        //     Parent root = loader.load();
-
-        //     Stage stage = new Stage();
-        //     stage.setScene(new Scene(root));
-        //     stage.show();
-
-        //     } catch (IOException e) {
-        //         System.out.println(e);
-        //     }
-		}
-		
+        try {
+            Stage primaryStage = (Stage)((Button)actionEvent.getSource()).getScene().getWindow();
+            primaryStage.setScene(mainScene);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+            }
+        
 
     /**
     * Gives the user a choice to open NTNU homepage in web-browser

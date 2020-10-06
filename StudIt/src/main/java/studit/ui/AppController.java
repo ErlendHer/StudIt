@@ -1,9 +1,6 @@
 package studit.ui;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -45,11 +42,20 @@ public class AppController implements ChangeListener<String> {
 
     public static Chatbot chatbot = null;
     ObservableList<String> list = FXCollections.observableArrayList();
-    App app = new App();
     public Scene mainScene;
+    public CourseController courseController;
+    public String label;
 
     public void setSecondScene(Scene scene) {
         mainScene = scene;
+    }
+
+    public String getLabel(){
+        return this.label;
+    }
+
+    public void setLabel(String label){
+        this.label = label;
     }
 
     /**
@@ -188,49 +194,28 @@ public class AppController implements ChangeListener<String> {
     public void mouseClicked(){
 		//Detecting mouse clicked
 		coursesList.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            private String label;
 			@Override
 			public void handle(MouseEvent arg0) {
-				String name = coursesList.getSelectionModel().getSelectedItem();	
+                super.label = coursesList.getSelectionModel().getSelectedItem();	
+                
                 try {
+                    // FXMLLoader loader = new FXMLLoader(getClass().getResource("Course.fxml"));
+                    // CourseController courseController = (CourseController) loader.getController();
+                    // courseController.setLabel(label);
+
                     Stage primaryStage = (Stage)((Node)arg0.getSource()).getScene().getWindow();
                     primaryStage.setScene(mainScene);
+                    
                 } catch (Exception e) {
                         System.out.println(e);
                 }
             }
-        });
-                    
+        });            
     }
-                    
-                        
-                        // FXMLLoader loader = new FXMLLoader(getClass().getResource("Course.fxml"));
-                        // Parent root = loader.load();
-                        // Scene newScene = new Scene(root);
-                        // Stage currentStage = (Stage) rootPane.getScene().getWindow();
-                        //         // currentStage.getScene().setRoot(root);
-                        // CourseController courseController = loader.getController();
-                        // courseController.setLabel(name);
-                        // currentStage.setScene(new Scene(courseController.rootPane));
-                        // currentStage.show();
-
-                        // Stage stage2 = new Stage();
-                        // stage2.setScene(new Scene(root));
-                        // stage2.setTitle("StudIt");
-                        // stage2.show();
-
-                        // Stage stage = (Stage) rootPane.getScene().getWindow();
-                        // stage.hide();
-            
-                        
-
-                        
-			
-		   
 
 
-   
-	
-    
+                
     /** This function should actually fetch data from a database. This will be implemented later.
     * @return None
     */
