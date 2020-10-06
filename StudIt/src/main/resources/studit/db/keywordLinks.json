@@ -1,0 +1,1 @@
+[{"command":"hils","keywords":{"hallo":1.0,"heisann":1.0,"hoi":1.0,"hei":1.0},"precedence":1,"words":["hallo","heisann","hoi","hei"]},{"command":"foo1","keywords":{"stuff":0.6,"random":0.4,"more":0.8},"precedence":2,"words":["stuff","random","more"]},{"command":"foo2","keywords":{"get":0.4,"you":0.8,"picture":0.1,"the":0.6},"precedence":2,"words":["get","you","picture","the"]}]

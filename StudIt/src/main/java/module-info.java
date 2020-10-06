@@ -6,6 +6,7 @@ module studit {
     requires transitive javafx.graphics;
     requires javafx.controls;
 	requires com.fasterxml.jackson.annotation;
+	requires guava;
 
     exports studit.ui;
     exports studit.core;

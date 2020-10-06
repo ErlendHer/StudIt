@@ -1,5 +1,48 @@
 {
-    "TDT4109": ["Itgk", "10", "Kjempe bra fag!"],
-    "IT1091": ["Informatikk prosjektarbeid", "10", "Anbefales sterkt"],
-    "TTM4100": ["Ktn", "2", "svakt opplegg"]
+  "items" : [ {
+    "code" : "tdt4109",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "tdt4110",
+    "name" : "Informasjonsteknologi grunnkurs for tullinger",
+    "rate" : "2",
+    "kommentar" : "drit lø"
+  }, {
+    "code" : "IIT1901",
+    "name" : "Informatikk prosjektarbeid",
+    "rate" : "0",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "TDT4245",
+    "name" : "fUGLESKIKKING",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "Tma4145",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "tma4100",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "tdt4245",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "IT02342",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  }, {
+    "code" : "TTM4100",
+    "name" : "Informasjonsteknologi grunnkurs",
+    "rate" : "10",
+    "kommentar" : "schpa"
+  } ]
 }

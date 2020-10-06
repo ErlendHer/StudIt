@@ -1,0 +1,72 @@
+#menu {
+    background-color: white;
+    -fx-background-color: white;
+
+}
+#addComment_btn {
+    color: white;
+    -fx-color: white;
+
+    -fx-background-color: #c9efff;
+    background-color:  #c9efff;
+    
+    font-size: 30;
+    -fx-font-size: 30;
+
+    font-weight: bold;
+    -fx-font-weight: bold;
+   
+   	padding:6px 24px;
+    -fx-padding: 6px 24px;
+
+    -fx-border-radius: 15%;
+    border-radius: 15%;
+}
+
+#addComment_btn:hover {
+   background-color: #235ce2;
+    -fx-background-color: #235ce2;
+
+}
+
+#addComment_btn:active {
+    position:relative;
+	top:1px;
+
+    -fx-position:relative;
+	-fx-top:1px;
+}
+
+#login_btn .content {
+    color: white;
+    -fx-color: white;
+
+}
+
+
+#chatbot_btn, #ntnu_btn, #mainPage_btn, #logout_btn {
+    -fx-background-color: white;
+    background-color: white;
+}
+
+#chatbot_btn:hover, #ntnu_btn:hover, #mainPage_btn:hover, #logout_btn:hover {
+    
+    background-color: black;
+    -fx-background-color: black;
+
+    border-bottom-color: grey;
+    -fx-border-bottom-color: grey;
+
+    border-top-color: grey;
+    -fx-border-top-color: grey;
+    }
+
+    #chatbot_btn:active, #ntnu_btn:active, #mainPage_btn:active, #logout_btn:active {
+        background-color: black;
+        -fx-background-color: black;
+    }
+
+
+
+
+

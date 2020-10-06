@@ -1,0 +1,39 @@
+#login_btn {
+    color: white;
+    -fx-color: white;
+
+    -fx-background-color: #c9efff;
+    background-color:  #c9efff;
+    
+    font-size: 30;
+    -fx-font-size: 30;
+
+    font-weight: bold;
+    -fx-font-weight: bold;
+   
+   	padding:6px 24px;
+    -fx-padding: 6px 24px;
+
+    -fx-border-radius: 15%;
+    border-radius: 15%;
+}
+
+#login_btn:hover {
+   background-color: #235ce2;
+    -fx-background-color: #235ce2;
+
+}
+
+#login_btn:active {
+    position:relative;
+	top:1px;
+
+    -fx-position:relative;
+	-fx-top:1px;
+}
+
+#login_btn .content {
+    color: white;
+    -fx-color: white;
+
+}

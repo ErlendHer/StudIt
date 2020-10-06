@@ -1,5 +1,6 @@
 # Directories
 StudIt/target/
+target/
 bin/
 .settings/
 
@@ -8,4 +9,6 @@ bin/
 .classpath
 studit.iml
 /.idea/
+.class
 
+/target/

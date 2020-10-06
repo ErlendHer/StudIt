@@ -1,0 +1,28 @@
+@startuml
+
+component core {
+	package studit.core
+	package studit.json
+}
+
+component jackson {
+}
+
+studit.json ..> jackson
+
+component fxui {
+	package studit.ui
+}
+
+studit.ui ..> studit.core
+studit.ui ..> studit.json
+
+component javafx {
+	component fxml {
+	}
+}
+
+fxui ..> javafx
+fxui ..> fxml
+
+@enduml
