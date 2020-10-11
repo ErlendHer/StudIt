@@ -21,7 +21,7 @@ public class LoginController implements Initializable {
   @FXML
   TextField usernameField;
   @FXML
-  Button loginButton;
+  Button login_btn;
   @FXML
   VBox vBox;
   @FXML

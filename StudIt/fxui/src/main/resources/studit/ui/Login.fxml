@@ -76,7 +76,7 @@
                   <Insets left="150.0" right="150.0" />
                </VBox.margin>
             </PasswordField>
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="300.0" text="Logg inn" textFill="#06349c">
+            <Button fx:id="login_btn" id="login_btn" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="40.0" prefWidth="300.0" text="Logg inn" textFill="#06349c">
                <VBox.margin>
                   <Insets bottom="10.0" top="30.0" />
                </VBox.margin>

@@ -43,13 +43,10 @@ public class CourseList implements Iterable<CourseItem> {
     return items.iterator();
   }
 
-  private Collection<CourseItem> getCourseItems(Boolean checked) {
-    Collection<CourseItem> result = new ArrayList<>(items.size());
-    return result;
+  public Collection<CourseItem> getCourseItems() {
+    return items;
   }
 
-  public Collection<CourseItem> getCourseItems() {
-    return getCourseItems(null);
-  }
+
 
 }

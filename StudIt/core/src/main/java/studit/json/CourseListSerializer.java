@@ -13,6 +13,11 @@ public class CourseListSerializer extends JsonSerializer<CourseList> {
    * format: { "items": [ ... ] }
    */
 
+   /**
+   * Serializes a courselist
+   *
+   * @param list the course list you want to serialize
+   */
   @Override
   public void serialize(CourseList list, JsonGenerator jsonGen, SerializerProvider serializerProvider)
       throws IOException {

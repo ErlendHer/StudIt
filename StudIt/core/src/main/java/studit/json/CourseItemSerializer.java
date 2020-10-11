@@ -8,10 +8,12 @@ import studit.core.mainpage.CourseItem;
 
 public class CourseItemSerializer extends JsonSerializer<CourseItem> {
 
-  /*
-   * format: { "code": xx, "name": xx ... }
+  
+   /**
+   * Serializes a courseitem
+   *
+   * @param item the item you want to serialize
    */
-
   @Override
   public void serialize(CourseItem item, JsonGenerator jsonGen, SerializerProvider serializerProvider)
       throws IOException {

@@ -21,6 +21,10 @@ class CourseListDeserializer extends JsonDeserializer<CourseList> {
    * format: { "items": [ ... ] }
    */
 
+   /**
+   * Derserialize a course list
+   *
+   */
   @Override
   public CourseList deserialize(JsonParser parser, DeserializationContext ctxt)
       throws IOException, JsonProcessingException {

@@ -13,8 +13,12 @@ import studit.core.mainpage.CourseItem;
 
 import java.io.IOException;
 
-class CourseItemDeserializer extends JsonDeserializer<CourseItem> {
+public class CourseItemDeserializer extends JsonDeserializer<CourseItem> {
 
+  /**
+   * Deserialiezes a CourseItem. 
+   *
+   */
   @Override
   public CourseItem deserialize(JsonParser parser, DeserializationContext ctxt)
       throws IOException, JsonProcessingException {

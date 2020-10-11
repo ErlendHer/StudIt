@@ -1,10 +1,13 @@
 {
-    "items": [
-        {
-            "code": "tdt4109",
-            "name": "itgk",
-            "rate": "10",
-            "kommentar": "yey"
-        }
-    ]
+  "items" : [ {
+    "code" : "TDT4109",
+    "name" : "ITGK for grovinger",
+    "rate" : "10",
+    "kommentar" : "Schpa fag"
+  }, {
+    "code" : "TMA4125",
+    "name" : "Statistikk",
+    "rate" : "8",
+    "kommentar" : "Kult fag"
+  } ]
 }

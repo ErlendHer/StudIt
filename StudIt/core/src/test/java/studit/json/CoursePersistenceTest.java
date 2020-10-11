@@ -1,72 +1,101 @@
-// package studit.json;
-
-// import com.fasterxml.jackson.core.JsonProcessingException;
-// import com.fasterxml.jackson.databind.ObjectMapper;
-
-// import java.io.StringWriter;
-// import java.util.Map;
-
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-// import static org.junit.jupiter.api.Assertions.assertFalse;
-// import static org.junit.jupiter.api.Assertions.assertTrue;
-// import static org.junit.jupiter.api.Assertions.fail;
-// import org.junit.jupiter.api.BeforeAll;
-// import org.junit.jupiter.api.Test;
-
-// import studit.core.mainpage.CourseItem;
-// import studit.core.mainpage.CourseList;
-// import studit.core.mainpage.CourseModel;
-
-// public class CoursePersistenceTest{
+package studit.json;
 
 
-//     private CoursePersistence coursePersistence = new CoursePersistence();
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import studit.core.mainpage.CourseItem;
+import studit.core.mainpage.CourseList;
 
-//     @BeforeAll
-//     public static void setUp() {
+public class CoursePersistenceTest {
 
-//         CourseModel model = new CourseModel();
+  private CoursePersistence coursePersistence = new CoursePersistence();
 
-//         CourseList list = new CourseList();
-        
-//         CourseItem item1 = new CourseItem();
-//         item1.setFagkode("TDT4109");
-//         item1.setFagnavn("ITGK for grovinger");
-//         item1.setKommentar("Schpa fag");
-//         item1.setScore("10");
-//         list.addCourseItem(item1);
+  @BeforeAll
+  public static void setUp() {
 
-//         CourseItem item2 = new CourseItem();
-//         item2.setFagkode("TMA4125");
-//         item2.setFagnavn("Statistikk");
-//         item2.setKommentar("Kult fag");
-//         item2.setScore("8");
-//         list.addCourseItem(item2);
+  }
 
-//     }
+  /**
+   * This function should fetch data from a database
+   */
+  private Collection<CourseItem> loadData() {
 
+    try (FileReader fr = new FileReader("src/main/resources/studit/db/maindbtest.json", StandardCharsets.UTF_8)) {
 
-//     @Test
-//     public void testSerializersDeserializers(){
+      CourseList li = coursePersistence.readCourseList(fr);
+
+      System.out.println(li.getCourseItems().size());
+
+      Collection<CourseItem> items = li.getCourseItems();
+
+      return items;
+
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    return null;
+
+  }
+
+  @Test
+  public void testSerializersDeserializers() {
+
+    CourseList list = new CourseList();
+
+    CourseItem item1 = new CourseItem();
+    item1.setFagkode("TDT4109");
+    item1.setFagnavn("ITGK for grovinger");
+    item1.setKommentar("Schpa fag");
+    item1.setScore("10");
+    list.addCourseItem(item1);
+
+    CourseItem item2 = new CourseItem();
+    item2.setFagkode("TMA4125");
+    item2.setFagnavn("Statistikk");
+    item2.setKommentar("Kult fag");
+    item2.setScore("8");
+    list.addCourseItem(item2);
+
+    CourseList courseList = new CourseList();
+    courseList.addCourseItem(item1);
+    courseList.addCourseItem(item2);
+
+    File file = new File("src/main/resources/studit/db/maindbtest.json");
+    Writer writer;
+    try {
+      writer = new PrintWriter(file);
+      coursePersistence.writeCourseList(courseList, writer);
+
+    } catch (FileNotFoundException e1) {
+      e1.printStackTrace();
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
     
-//         try {
-//             StringWriter writer = new StringWriter();
-//             coursePersistence.writeCourseModel(model, writer);
-//             String json = writer.toString();
-//             TodoModel model2 = todoPersistence.readTodoModel(new StringReader(json));
-//             assertTrue(model2.iterator().hasNext());
-//             TodoList list2 = model.iterator().next();
-//             assertEquals("todo", list.getName());
-//             Iterator<TodoItem> it = list2.iterator();
-//             assertTrue(it.hasNext());
-//             TodoModuleTest.checkTodoItem(it.next(), item1);
-//             assertTrue(it.hasNext());
-//             TodoModuleTest.checkTodoItem(it.next(), item2);
-//             assertFalse(it.hasNext());
-//         } catch (IOException e) {
-//             fail();
-//         }
 
+    Collection<CourseItem> items2 = loadData();
 
+    Collection<CourseItem> items1 = courseList.getCourseItems();
 
-// }
+    assertEquals(items1.iterator().hasNext(), items2.iterator().hasNext());
+    assertEquals(items1.iterator().next().getFagnavn(), items2.iterator().next().getFagnavn());
+    
+    assertEquals(items1.iterator().hasNext(), items2.iterator().hasNext());
+    assertEquals(items1.iterator().next().getFagnavn(), items2.iterator().next().getFagnavn());
+
+  }
+}
