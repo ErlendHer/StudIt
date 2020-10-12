@@ -150,8 +150,7 @@ public class CourseController implements Initializable {
 
   /**
    * Sets the rating of the subject.
-   * 
-   * @param rating
+   * @param rating represents the value of the rating to be set 
    */
   @FXML
   public void setRating(double rating) {
