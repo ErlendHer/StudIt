@@ -1,17 +1,21 @@
 package studit.ui;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 import org.testfx.framework.junit5.ApplicationTest;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import studit.core.users.User;
+import studit.ui.remote.ApiCallException;
+import studit.ui.remote.DirectStuditModelAccess;
 
 public class NewUserControllerTest extends ApplicationTest {
 
   private NewUserController controller;
+  private DirectStuditModelAccess remote = new DirectStuditModelAccess();
 
   @Override
   public void start(final Stage stage) throws Exception {
@@ -22,21 +26,25 @@ public class NewUserControllerTest extends ApplicationTest {
     stage.show();
   }
 
-  // @Test
-  // public void testSaveNewUserAction() {
-  //   User user = new User("Ola Halvorsen", "olahalla", "ola.halvorsen@gmail.com", "olala");
-  //   UserManager.addUser(user);
-  //   writeNewUserFields();
-  //   clickOn("#saveNewUserButton");
-  //   assertTrue(controller.infoTextField.getText().equals("Error: This username is already taken"));
-  // }
+  @Test
+  public void testLoginController() {
+    assertNotNull(this.controller);
+  }
 
-  //TODO denne feila
-  //public void writeNewUserFields() {
-  //  clickOn("#nameField").write("Ola Halvorsen");
-  //  clickOn("#usernameField").write("olahalla");
-  //  clickOn("#mailField").write("ola.halvorsen@gmail.com");
-  //  clickOn("#userPasswordField").write("olala");
-  //}
+  @Test
+  public void testSaveNewUserAction() throws ApiCallException {
+    controller.setRemote(remote);
+    remote.addUser("Ola Halvorsen", "olahalla", "ola.halvorsen@gmail.com", "olalalala");
+    writeNewUserFields();
+    clickOn("#saveNewUserButton");
+    assertEquals("\'olahalla\' is not a unique username", controller.infoTextField.getText());
+  }
+
+  public void writeNewUserFields() {
+    clickOn("#nameField").write("Ola Halvorsen");
+    clickOn("#usernameField").write("olahalla");
+    clickOn("#mailField").write("ola.halvorsen@gmail.com");
+    clickOn("#userPasswordField").write("olalalala");
+  }
 
 }

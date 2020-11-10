@@ -30,6 +30,14 @@ public class NewUserController {
   Text infoTextField;
 
   /**
+   * For testing purposes only. Changes the remote.
+   * @param remote - The new remote to be set
+   */
+  public void setRemote(RemoteStuditModelAccess remote) {
+    this.remote = remote;
+  }
+
+  /**
    * Makes a new User-object, and sets the four values. Uses the
    * UserManager.addUser to check if the username is taken.
    * 

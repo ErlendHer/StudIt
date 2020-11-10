@@ -102,11 +102,6 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <Text fx:id="forgotPassword" fill="#2c5282" onMouseClicked="#forgotPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Glemt passord?" textAlignment="CENTER" wrappingWidth="201.50399780273438">
-                     <font>
-                        <Font name="Avenir Book" size="14.0" />
-                     </font>
-                  </Text>
                </children>
                <VBox.margin>
                   <Insets top="20.0" />

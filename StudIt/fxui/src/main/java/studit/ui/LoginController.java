@@ -1,5 +1,6 @@
 package studit.ui;
 
+import java.io.IOException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +39,19 @@ public class LoginController {
 
   private RemoteStuditModelAccess remote;
   private User currentUser;
+  private static Boolean testingMode = false;
+
+  public static void setTestingMode(Boolean bol) {
+    if (bol) {
+      testingMode = true;
+    } else {
+      testingMode = false;
+    }
+  }
+
+  public static Boolean getTestingMode() {
+    return testingMode;
+  }
 
   /**
    * The constrcutur sets up a remote, to call methods from
@@ -53,6 +67,15 @@ public class LoginController {
    */
   public void initialize() {
     listenForEnter();
+  }
+
+  /**
+   * For testing purposes only. Changes the remote.
+   * 
+   * @param remote - The new remote to be set
+   */
+  public void setRemote(RemoteStuditModelAccess remote) {
+    this.remote = remote;
   }
 
   /**
@@ -89,24 +112,13 @@ public class LoginController {
    * Method to register new user. Loads new window: "Newuser.fxml"
    * 
    */
-  public void registerUser() {
-    try {
-      BorderPane pane = FXMLLoader.load(getClass().getResource("NewUser.fxml"));
-      Stage stage = new Stage();
-      Scene scene = new Scene(pane);
-      stage.setScene(scene);
-      stage.setTitle("New User");
-      stage.show();
-    } catch (Exception e) {
-      System.out.println("Coud not open NewUser.fxml");
-    }
-  }
-
-  /*
-   * Checks if email is registered, sends password to user if it is
-   */
-  public void forgotPassword() {
-    // maybe drop this method
+  public void registerUser() throws IOException {
+    BorderPane pane = FXMLLoader.load(getClass().getResource("NewUser.fxml"));
+    Stage stage = new Stage();
+    Scene scene = new Scene(pane);
+    stage.setScene(scene);
+    stage.setTitle("New User");
+    stage.show();
   }
 
   /**
@@ -134,7 +146,7 @@ public class LoginController {
       stage.setTitle("StudIt");
       stage.show();
 
-      //Hide the login window
+      // Hide the login window
       Stage stage2 = (Stage) passwordField.getScene().getWindow();
       stage2.hide();
     } else {
