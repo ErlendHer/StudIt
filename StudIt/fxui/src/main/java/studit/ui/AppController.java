@@ -62,6 +62,13 @@ public class AppController {
 
   private String label;
 
+  private FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
+
+  private SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
+
+  private ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
+
+
   public void setLabel(String label) {
     this.label = label;
   }
@@ -81,6 +88,8 @@ public class AppController {
   public void addUser(User user) {
     this.user = user;
   }
+
+
 
   /**
    * For testing purposes only. Changes the remote.
@@ -123,17 +132,16 @@ public class AppController {
     coursesList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     // Actions on clicked list item
     mouseClicked();
-    setSearch();
   }
 
 
 
-  public void setSearch(){
-    // Wrap the ObservableList in a FilteredList (initially display all data).
-    FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
-    SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
-    ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
-  }
+  // public void setSearch(){
+  //   // Wrap the ObservableList in a FilteredList (initially display all data).
+  //   FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
+  //   SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
+  //   ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
+  // }
 
 
   /**
@@ -145,7 +153,7 @@ public class AppController {
     // Set the filter Predicate whenever the filter changes.
     searchField.textProperty().addListener((observable, oldValue, newValue) -> {
 
-      filteredData.setPredicate(courseItem -> {
+      this.filteredData.setPredicate(courseItem -> {
         // If filter text is empty, display all courses
         if (newValue == null || newValue.isEmpty()) {
           System.out.println("textfield is empty");
@@ -168,8 +176,26 @@ public class AppController {
    
     filteredList.setAll(sortedData);
     this.coursesList.setItems(filteredList);
+
+    coursesList.setCellFactory(param -> new ListCell<CourseItem>() {
+
+      @Override
+      public void updateItem(CourseItem item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setText(null);
+          setGraphic(null);
+          return;
+        }
+
+        setText(item.getFagkode() + " " + item.getFagnavn());
+        setGraphic(null);
+      }
+    });
   }
 
+
+  
   /**
    * Opens chatbot.
    */
