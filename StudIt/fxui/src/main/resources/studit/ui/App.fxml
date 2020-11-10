@@ -74,7 +74,7 @@
             </Text>
             <VBox prefHeight="595.0" prefWidth="1020.0" style="-fx-background-color: #EBF8FF;">
                <children>
-                  <HBox id="searchbar" alignment="CENTER" maxHeight="70.0" prefHeight="40.0" prefWidth="910.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+                  <HBox id="searchbar" alignment="CENTER" maxHeight="70.0" prefHeight="40.0" prefWidth="925.0" style="-fx-background-color: white; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="32.0" opacity="0.64" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
                            <image>
@@ -84,7 +84,7 @@
                               <Insets />
                            </HBox.margin>
                         </ImageView>
-                        <TextField id="searchField" fx:id="searchField" onAction="#handleSearchFieldAction" prefHeight="57.0" prefWidth="820.0" promptText="Søk på fag" style="-fx-background-color: white;" HBox.hgrow="NEVER">
+                        <TextField id="searchField" fx:id="searchField" onAction="#handleSearchFieldAction" prefHeight="39.0" prefWidth="887.0" promptText="Søk på fag" style="-fx-background-color: white;" HBox.hgrow="NEVER">
                            <font>
                               <Font name="Avenir Book" size="18.0" />
                            </font>
