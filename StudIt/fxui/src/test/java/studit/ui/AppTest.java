@@ -1,14 +1,8 @@
 // package studit.ui;
 
-// import static org.junit.Assert.assertEquals;
-// import static org.junit.Assert.assertNotEquals;
-// import static org.junit.Assert.assertThat;
 // import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-// import java.util.List;
-
 // import org.assertj.core.api.Assertions;
-// import org.junit.jupiter.api.BeforeEach;
 // import org.junit.jupiter.api.Test;
 // import org.testfx.api.FxAssert;
 // import org.testfx.framework.junit5.ApplicationTest;
