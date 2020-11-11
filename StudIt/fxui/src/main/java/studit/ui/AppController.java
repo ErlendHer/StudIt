@@ -40,8 +40,7 @@ public class AppController {
    */
   private User currentUser = null;
 
-  @FXML
-  private BorderPane rootPane;
+  @FXML BorderPane rootPane;
 
   @FXML
   private TextField searchField;
@@ -66,7 +65,6 @@ public class AppController {
   private SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
 
   private ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
-
 
   private String label;
 

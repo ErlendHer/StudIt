@@ -14,6 +14,8 @@ import org.testfx.matcher.base.WindowMatchers;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import studit.core.users.User;
@@ -56,7 +58,8 @@ public class AppControllerTest extends ApplicationTest {
   @Test
   public void testSearchField() {
     clickOn("#searchField").write("Disk");
-    //Mer her, men tror ikke koden faktisk funker atm
+
+
   }
 
   // @Test
@@ -68,10 +71,29 @@ public class AppControllerTest extends ApplicationTest {
   //   assertNull(AppController.getChatbot());
   // }
 
+// @Test
+//   public void testOpenChatBot() {
+//   clickOn("#chatbot_btn");
+//   FxAssert.verifyThat(window("Chatbot"), WindowMatchers.isShowing());
+//   }
+
   @Test
   public void testLogoutAction() {
     clickOn("#logout_btn");
     FxAssert.verifyThat(window("Login"), WindowMatchers.isShowing());
   }
+
+  
+
+
+   @Test
+  public void hasLogoutButton() {
+  BorderPane rootNode = (BorderPane)
+  appController.rootPane.getScene().getRoot();
+  Button button = from(rootNode).lookup("Logg ut").query();
+  assertEquals("Logg ut", button.getText());
+  }
+
+  
   
 }
