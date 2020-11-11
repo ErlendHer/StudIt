@@ -19,6 +19,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -42,11 +43,14 @@ public class AppController {
    */
   private User currentUser = null;
 
-  @FXML BorderPane rootPane;
+  @FXML
+  BorderPane rootPane;
 
-  @FXML TextField searchField;
+  @FXML
+  TextField searchField;
 
-  @FXML ListView<CourseItem> coursesList;
+  @FXML
+  ListView<CourseItem> coursesList;
 
   @FXML
   private Button chatbot_btn;
@@ -68,7 +72,6 @@ public class AppController {
 
   private ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
 
-
   public void setLabel(String label) {
     this.label = label;
   }
@@ -89,10 +92,9 @@ public class AppController {
     this.user = user;
   }
 
-
-
   /**
    * For testing purposes only. Changes the remote.
+   * 
    * @param remote - The new remote to be set
    */
   public void setRemote(RemoteStuditModelAccess remote) {
@@ -132,24 +134,19 @@ public class AppController {
     coursesList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     // Actions on clicked list item
     mouseClicked();
+    initializeSearch();
   }
 
-
-
   // public void setSearch(){
-  //   // Wrap the ObservableList in a FilteredList (initially display all data).
-  //   FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
-  //   SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
-  //   ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
+  // // Wrap the ObservableList in a FilteredList (initially display all data).
+  // FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p
+  // -> true));
+  // SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
+  // ObservableList<CourseItem> filteredList =
+  // FXCollections.observableArrayList();
   // }
 
-
-  /**
-   * Function to search for subjects. The listview will then only show subjects
-   * with the letters in the search field.
-   */
-  @FXML
-  public void handleSearchFieldAction() {
+  public void initializeSearch() {
     // Set the filter Predicate whenever the filter changes.
     searchField.textProperty().addListener((observable, oldValue, newValue) -> {
 
@@ -173,7 +170,7 @@ public class AppController {
         return false; // Does not match
       });
     });
-   
+
     filteredList.setAll(sortedData);
     this.coursesList.setItems(filteredList);
 
@@ -194,8 +191,16 @@ public class AppController {
     });
   }
 
+  /**
+   * Function to search for subjects. The listview will then only show subjects
+   * with the letters in the search field.
+   */
+  @FXML
+  public void handleSearchFieldAction(KeyEvent e) {
+    filteredList.setAll(sortedData);
+    this.coursesList.setItems(filteredList);
+  }
 
-  
   /**
    * Opens chatbot.
    */
@@ -248,7 +253,7 @@ public class AppController {
       public void handle(MouseEvent arg0) {
 
         try {
-          
+
           // getting loader and a pane for the second scene.
           FXMLLoader courseLoader = new FXMLLoader(getClass().getResource("Course.fxml"));
           Parent coursePane = courseLoader.load();
