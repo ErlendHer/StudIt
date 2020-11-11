@@ -21,6 +21,7 @@ import studit.core.users.User;
 public class CourseController implements Initializable {
 
   private User currentUser;
+  private CourseItem courseItem;
 
   @FXML
   private BorderPane rootPane;
@@ -75,7 +76,7 @@ public class CourseController implements Initializable {
 
   // private Scene mainScene;
 
-  private CourseItem courseItem;
+  
 
   public void setCourseItem(CourseItem courseItem) {
     this.courseItem = courseItem;
@@ -241,13 +242,7 @@ public class CourseController implements Initializable {
     }
   }
 
-  @FXML
-  void handleAddCommentAction(ActionEvent event) {
-    // TODO fikse metoden her?
-    // Send tilbakemeldingen til API serveren?
-  }
-
-  // TODO funker ikke :()
+  // TODO funker ikke :(
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 

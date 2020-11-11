@@ -1,10 +1,8 @@
 package studit.ui;
 
 import java.util.List;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Priority;
@@ -13,7 +11,6 @@ import javafx.scene.text.Text;
 import studit.core.mainpage.Comment;
 import studit.core.mainpage.CourseItem;
 import studit.core.users.User;
-import studit.ui.DiscussionController;
 import studit.ui.remote.ApiCallException;
 import studit.ui.remote.RemoteStuditModelAccess;
 

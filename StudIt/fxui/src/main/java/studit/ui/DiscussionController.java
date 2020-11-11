@@ -21,7 +21,6 @@ import javafx.stage.Stage;
 import studit.core.mainpage.Comment;
 import studit.core.mainpage.CourseItem;
 import studit.core.users.User;
-import studit.ui.CommentListCell;
 import studit.ui.remote.ApiCallException;
 import studit.ui.remote.RemoteStuditModelAccess;
 

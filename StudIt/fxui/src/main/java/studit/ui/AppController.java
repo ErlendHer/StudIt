@@ -19,6 +19,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -43,13 +44,13 @@ public class AppController {
   private User currentUser = null;
 
   @FXML
-  private BorderPane rootPane;
+  BorderPane rootPane;
 
   @FXML
-  private TextField searchField;
+  TextField searchField;
 
   @FXML
-  private ListView<CourseItem> coursesList;
+  ListView<CourseItem> coursesList;
 
   @FXML
   private Button chatbot_btn;
@@ -64,6 +65,12 @@ public class AppController {
   private List<CourseItem> courseList;
 
   private String label;
+
+  private FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
+
+  private SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
+
+  private ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
 
   public void setLabel(String label) {
     this.label = label;
@@ -87,6 +94,7 @@ public class AppController {
 
   /**
    * For testing purposes only. Changes the remote.
+   * 
    * @param remote - The new remote to be set
    */
   public void setRemote(RemoteStuditModelAccess remote) {
@@ -126,23 +134,25 @@ public class AppController {
     coursesList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     // Actions on clicked list item
     mouseClicked();
+    initializeSearch();
   }
 
-  /**
-   * Function to search for subjects. The listview will then only show subjects
-   * with the letters in the search field.
-   */
-  @FXML
-  public void handleSearchFieldAction() {
-    // Wrap the ObservableList in a FilteredList (initially display all data).
-    FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
+  // public void setSearch(){
+  // // Wrap the ObservableList in a FilteredList (initially display all data).
+  // FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p
+  // -> true));
+  // SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
+  // ObservableList<CourseItem> filteredList =
+  // FXCollections.observableArrayList();
+  // }
 
+  public void initializeSearch() {
     // Set the filter Predicate whenever the filter changes.
     searchField.textProperty().addListener((observable, oldValue, newValue) -> {
       System.out.println("textfield changed from " + oldValue + " to " + newValue);
 
-      filteredData.setPredicate(courseItem -> {
-        // If filter text is empty, display all persons.
+      this.filteredData.setPredicate(courseItem -> {
+        // If filter text is empty, display all courses
         if (newValue == null || newValue.isEmpty()) {
           return true;
         }
@@ -159,11 +169,34 @@ public class AppController {
       });
     });
 
-    SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
-    ObservableList<CourseItem> filtredList = FXCollections.observableArrayList();
-    filtredList.setAll(sortedData);
-    this.coursesList.setItems(filtredList);
+    filteredList.setAll(sortedData);
+    this.coursesList.setItems(filteredList);
 
+    coursesList.setCellFactory(param -> new ListCell<CourseItem>() {
+
+      @Override
+      public void updateItem(CourseItem item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty) {
+          setText(null);
+          setGraphic(null);
+          return;
+        }
+
+        setText(item.getFagkode() + " " + item.getFagnavn());
+        setGraphic(null);
+      }
+    });
+  }
+
+  /**
+   * Function to search for subjects. The listview will then only show subjects
+   * with the letters in the search field.
+   */
+  @FXML
+  public void handleSearchFieldAction(KeyEvent e) {
+    filteredList.setAll(sortedData);
+    this.coursesList.setItems(filteredList);
   }
 
   /**
@@ -220,9 +253,6 @@ public class AppController {
         // setLabel(coursesList.getSelectionModel().getSelectedItem());
 
         try {
-          // FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("App.fxml"));
-          // Parent mainPane = mainLoader.load();
-          // Scene mainScene = new Scene(mainPane);
 
           // getting loader and a pane for the second scene.
           FXMLLoader courseLoader = new FXMLLoader(getClass().getResource("Course.fxml"));

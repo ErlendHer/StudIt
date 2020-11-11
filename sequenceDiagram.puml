@@ -1,0 +1,24 @@
+@startuml
+actor User
+User -> "~#openDiscussion: Button" as openDiscussion: click
+
+openDiscussion -> CourseController: OpenDiscussion()
+
+CourseController -> DiscussionController: addCourse()
+CourseController -> DiscussionController: setCurrentUser()
+CourseController -> DiscussionController: updateView()
+
+DiscussionController -> Server: getCourseByFagkode()
+DiscussionController -> Server: getCommentById()
+Server -> DiscussionController: CourseItem
+Server -> DiscussionController: Comment
+
+DiscussionController -> CourseItem: getDiskusjon()
+CourseItem -> Discussion: getComments()
+Discussion -> CourseItem: comments
+CourseItem -> DiscussionController: diskusjon
+
+
+
+DiscussionController -> User: show the discussion
+@enduml
