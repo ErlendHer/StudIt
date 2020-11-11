@@ -1,0 +1,163 @@
+@startuml
+
+class CourseItem {
+  - String fagnavn
+  - String fagkode
+  - String fagkode;
+  - String fagnavn;
+  - String informasjon;
+  - String pensumlitteratur;
+  - String anbefaltLitteratur;
+  - String tips;
+  - String eksamensdato;
+  - String vurderingsform;
+  - String hjelpemidler;
+  - float averageVurdering;
+  - List<Integer> vurderinger;
+  - Discussion diskusjon;
+
+  + setFagkode()
+  + getFagkode()
+
+  + setFagnavn()
+  + getFagnavn()
+
+  + setVurderingsForm()
+  + getVurderingsForm()
+  
+  + setCourseInformation()
+  + getCourseInformation()
+
+  + setEksamensdato()
+  + getEksamensdato()
+
+  + setHjelpemidler()
+  + getHjelpemidler()
+
+  + setLitterature()
+  + getLitterature()
+
+  + setTips()
+  + getTips()
+
+  + setRating()
+  + getRating()
+
+  + getDiskusjon()
+  + setDiskusjon()
+}
+
+
+class CourseController{
+  - CourseItem courseItem
+  - User currentUser
+  
+  + setFagkode()
+  + setFagnavn()
+  + setVurderingsForm()
+  + setCourseInformation()
+  + setEksamensdato()
+  + setHjelpemidler()
+  + setLitterature()
+  + setTips()
+  + setRating()
+  + getRating()
+  + setCurrentUser()
+  + updateView()
+  ~ handleLogoutAction()
+  ~ handleMainPageAction()
+  ~ openChatBot()
+  ~ openDiscussion()
+}
+
+
+class DiscussionController{
+    - ObservableList<Comment> listView
+    - CourseItem courseItem
+    - ListView<Comment> forumList
+    - User currentUser
+
+    + setFagkode()
+    + setFagnavn()
+    ~ addNewPost() package protected
+    + addCourse()
+    + updateView()
+    + loadView()
+    + setCurrentUser()
+    ~ handleLogoutAction()
+    ~ handleMainPageAction()
+    ~ openChatBot()
+    ~ openInformationTab()
+}
+
+
+class User {
+    - String name;
+    - String username;
+    - String mail;
+    - String password;
+    - int uniqueID;
+
+    + getName()
+    + setName()
+
+    + getUsername()
+    + setUsername()
+
+    + getMail()
+    + setMail()
+
+    + getPassword()
+    + setPassword()
+
+    + getUniqueID()
+    + setUniqueID()
+}
+
+ 
+class AppController {
+    - RemoteStuditModelAccess remoteStuditModelAccess
+    - User currentUser
+    - private static Chatbot chatbot
+    - ObservableList<CourseItem> list
+    - List<CourseItem> courseList
+    - String label
+    - FilteredList<CourseItem> filteredData
+    - SortedList<CourseItem> sortedData 
+    - ObservableList<CourseItem> filteredList 
+
+    + setLabel()
+    + getLabel()
+
+    + newChatbot()
+    + getChatbot()
+    ~ openChatBot()
+    + closeChatbot()
+
+    + addUser()
+    + setRemote()
+    + setCurrentUser()
+    + getCurrentUser()
+    + initialize()
+    + handleSearchFieldAction()
+    + loadData()
+    + getData()
+    ~ handleLogoutAction()
+    ~ handleMainPageAction()
+    ~ mouseClicked()
+   
+}
+
+
+AppController --> CourseItem: courses: *
+AppController --> CourseController: coursecontroller: 1
+
+CourseController --> CourseItem : courses: *
+CourseController --> DiscussionController : discussions: *
+
+DiscussionController --> CourseItem : courses: *
+
+User <-- AppController : 1
+
+
+@enduml
