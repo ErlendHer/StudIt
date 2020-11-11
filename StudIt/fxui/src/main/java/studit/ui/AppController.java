@@ -19,6 +19,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -62,11 +63,9 @@ public class AppController {
 
   private String label;
 
-  private FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
+  private FilteredList<CourseItem> filteredData; 
 
-  private SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
-
-  private ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
+  private SortedList<CourseItem> sortedData;
 
 
   public void setLabel(String label) {
@@ -134,22 +133,15 @@ public class AppController {
     mouseClicked();
   }
 
-
-
-  // public void setSearch(){
-  //   // Wrap the ObservableList in a FilteredList (initially display all data).
-  //   FilteredList<CourseItem> filteredData = new FilteredList<>(this.getData(), (p -> true));
-  //   SortedList<CourseItem> sortedData = new SortedList<>(filteredData);
-  //   ObservableList<CourseItem> filteredList = FXCollections.observableArrayList();
-  // }
-
-
   /**
    * Function to search for subjects. The listview will then only show subjects
    * with the letters in the search field.
    */
   @FXML
-  public void handleSearchFieldAction() {
+  public void handleSearchFieldAction(KeyEvent e) {
+    
+    this.filteredData = new FilteredList<>(this.getData(), (p -> true));
+
     // Set the filter Predicate whenever the filter changes.
     searchField.textProperty().addListener((observable, oldValue, newValue) -> {
 
@@ -174,24 +166,12 @@ public class AppController {
       });
     });
    
-    filteredList.setAll(sortedData);
-    this.coursesList.setItems(filteredList);
+    this.sortedData = new SortedList<>(filteredData);
 
-    coursesList.setCellFactory(param -> new ListCell<CourseItem>() {
-
-      @Override
-      public void updateItem(CourseItem item, boolean empty) {
-        super.updateItem(item, empty);
-        if (empty) {
-          setText(null);
-          setGraphic(null);
-          return;
-        }
-
-        setText(item.getFagkode() + " " + item.getFagnavn());
-        setGraphic(null);
-      }
-    });
+    this.list.clear();
+    this.list.setAll(sortedData);
+    this.coursesList.setItems(this.list);
+  
   }
 
 
@@ -326,7 +306,7 @@ public class AppController {
    * @return list;
    */
   public ObservableList<CourseItem> getData() {
-    return list;
+    return this.list;
   }
 
 }
