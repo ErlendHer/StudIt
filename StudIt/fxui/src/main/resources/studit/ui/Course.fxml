@@ -15,7 +15,7 @@
 
 <BorderPane id="rootPane" fx:id="rootPane" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #F8F8F8;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="studit.ui.CourseController">
     <top>
-        <HBox prefHeight="50.0" prefWidth="1280.0">
+        <HBox prefHeight="50.0" prefWidth="1280.0" style="-fx-background-color: #EBF8FF;">
             <BorderPane.margin>
                 <Insets />
             </BorderPane.margin>
@@ -201,7 +201,7 @@
                         <Insets />
                      </VBox.margin>
                   </Text>
-                  <TextField id="eksamensdato" fx:id="eksamensdato" editable="false" prefHeight="80.0" prefWidth="244.0" style="-fx-background-color: none;" VBox.vgrow="ALWAYS">
+                  <TextField id="eksamensdato" fx:id="eksamensdato" editable="false" prefHeight="80.0" prefWidth="244.0" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin></TextField>
@@ -213,7 +213,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Text>
-                  <TextField id="vurderingsform" fx:id="vurderingsform" editable="false" prefHeight="80.0" prefWidth="244.0" style="-fx-background-color: none;" VBox.vgrow="ALWAYS">
+                  <TextField id="vurderingsform" fx:id="vurderingsform" editable="false" prefHeight="80.0" prefWidth="244.0" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin></TextField>
@@ -225,7 +225,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Text>
-                  <TextField id="hjelpemidler" fx:id="hjelpemidler" editable="false" prefHeight="80.0" prefWidth="244.0" style="-fx-background-color: none;" VBox.vgrow="ALWAYS">
+                  <TextField id="hjelpemidler" fx:id="hjelpemidler" editable="false" prefHeight="80.0" prefWidth="244.0" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin></TextField>

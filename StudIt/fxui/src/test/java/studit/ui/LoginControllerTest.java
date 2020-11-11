@@ -56,7 +56,8 @@ public class LoginControllerTest extends ApplicationTest {
     loginController.setRemote(this.remote);
     LoginController.setTestingMode(true);
     writeUserPassword();
-    clickOn("#login_btn");
+    //clickOn("#login_btn");
+    clickOn("#passwordField").write("\n");
     FxAssert.verifyThat(window("StudIt"), WindowMatchers.isShowing());
   }
 
@@ -76,6 +77,19 @@ public class LoginControllerTest extends ApplicationTest {
   public void testTestMode() {
     LoginController.setTestingMode(false);
     assertFalse(LoginController.getTestingMode());
+  }
+
+  //This test contributes to newUserController
+  @Test
+  public void testWindowCloses() {
+    LoginController.setTestingMode(true);
+    clickOn("#registerUser_btn");
+    clickOn("#nameField").write("Ola Halvorsen");
+    clickOn("#usernameField").write("olahalla");
+    clickOn("#mailField").write("ola.halvorsen@gmail.com");
+    clickOn("#userPasswordField").write("olalalala");
+    clickOn("#saveNewUserButton");
+    FxAssert.verifyThat(window("Login"), WindowMatchers.isShowing());
   }
 
   public void writeUserPassword() {

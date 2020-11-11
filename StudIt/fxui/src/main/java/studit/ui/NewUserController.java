@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import studit.ui.remote.ApiCallException;
 import studit.ui.remote.RemoteStuditModelAccess;
+import studit.ui.remote.DirectStuditModelAccess;
 
 public class NewUserController {
 
@@ -14,6 +15,17 @@ public class NewUserController {
 
   public NewUserController() {
     this.remote = new RemoteStuditModelAccess();
+  }
+
+  /**
+   * Function to initialize AppController.
+   */
+  public void initialize() {
+    if (LoginController.getTestingMode()) {
+      setRemote(new DirectStuditModelAccess());
+    } else {
+      System.out.println("Using old remote :( \n");
+    }
   }
 
   @FXML
@@ -31,6 +43,7 @@ public class NewUserController {
 
   /**
    * For testing purposes only. Changes the remote.
+   * 
    * @param remote - The new remote to be set
    */
   public void setRemote(RemoteStuditModelAccess remote) {
