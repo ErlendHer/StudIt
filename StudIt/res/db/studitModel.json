@@ -109,7 +109,7 @@
         } ]
       }
     }, {
-      "fagkode" : "TDT4120",
+      "fagkode" : "IT1901",
       "fagnavn" : "Algoritmer og Datastrukturer",
       "informasjon" : "Metoder for å analysere effektiviteten av algoritmer, splitt- og hersk-teknikker, rekursive løsningsmetoder. Metoder for ordning, søking i og sortering av datamengder. Datastrukturer for effektiv gjenfinning av data, dynamisk programmering og grådighetsalgoritmer. Datastrukturer for etablering av grafer og nettverk, samt metoder for gjennomløping og leting. Algoritmer for å finne beste vei(er) og koplinger (matchinger), spenntrær og maksimal flyt. Teori for problemkompleksitet. Algoritmene uttrykkes mest mulig språkuavhengig.",
       "pensumlitteratur" : "Introduction to Algorithms - Cormen, Thomas H. Leiserson, Charles E. Rivest, Ronald L.Stein, Clifford",
